@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54F07FD51CE3039E006C63EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FD41CE3039E006C63EB /* AppDelegate.swift */; };
+		54F07FD71CE3039E006C63EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FD61CE3039E006C63EB /* ViewController.swift */; };
+		54F07FDA1CE3039E006C63EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F07FD81CE3039E006C63EB /* Main.storyboard */; };
+		54F07FDC1CE3039E006C63EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F07FDB1CE3039E006C63EB /* Assets.xcassets */; };
+		54F07FDF1CE3039E006C63EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */; };
+		54F07FEA1CE3039F006C63EB /* WezomProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FE91CE3039F006C63EB /* WezomProjectTests.swift */; };
+		54F07FF51CE3039F006C63EB /* WezomProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FF41CE3039F006C63EB /* WezomProjectUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54F07FE61CE3039F006C63EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54F07FC91CE3039D006C63EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54F07FD01CE3039D006C63EB;
+			remoteInfo = WezomProject;
+		};
+		54F07FF11CE3039F006C63EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54F07FC91CE3039D006C63EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54F07FD01CE3039D006C63EB;
+			remoteInfo = WezomProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		54F07FD11CE3039E006C63EB /* WezomProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WezomProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F07FD41CE3039E006C63EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54F07FD61CE3039E006C63EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		54F07FD91CE3039E006C63EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		54F07FDB1CE3039E006C63EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54F07FDE1CE3039E006C63EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54F07FE01CE3039E006C63EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54F07FE51CE3039F006C63EB /* WezomProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WezomProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F07FE91CE3039F006C63EB /* WezomProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WezomProjectTests.swift; sourceTree = "<group>"; };
+		54F07FEB1CE3039F006C63EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54F07FF01CE3039F006C63EB /* WezomProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WezomProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F07FF41CE3039F006C63EB /* WezomProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WezomProjectUITests.swift; sourceTree = "<group>"; };
+		54F07FF61CE3039F006C63EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54F07FCE1CE3039D006C63EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54F07FE21CE3039F006C63EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54F07FED1CE3039F006C63EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54F07FC81CE3039D006C63EB = {
+			isa = PBXGroup;
+			children = (
+				54F07FD31CE3039E006C63EB /* WezomProject */,
+				54F07FE81CE3039F006C63EB /* WezomProjectTests */,
+				54F07FF31CE3039F006C63EB /* WezomProjectUITests */,
+				54F07FD21CE3039E006C63EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		54F07FD21CE3039E006C63EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54F07FD11CE3039E006C63EB /* WezomProject.app */,
+				54F07FE51CE3039F006C63EB /* WezomProjectTests.xctest */,
+				54F07FF01CE3039F006C63EB /* WezomProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54F07FD31CE3039E006C63EB /* WezomProject */ = {
+			isa = PBXGroup;
+			children = (
+				54F07FD41CE3039E006C63EB /* AppDelegate.swift */,
+				54F07FD61CE3039E006C63EB /* ViewController.swift */,
+				54F07FD81CE3039E006C63EB /* Main.storyboard */,
+				54F07FDB1CE3039E006C63EB /* Assets.xcassets */,
+				54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */,
+				54F07FE01CE3039E006C63EB /* Info.plist */,
+			);
+			path = WezomProject;
+			sourceTree = "<group>";
+		};
+		54F07FE81CE3039F006C63EB /* WezomProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				54F07FE91CE3039F006C63EB /* WezomProjectTests.swift */,
+				54F07FEB1CE3039F006C63EB /* Info.plist */,
+			);
+			path = WezomProjectTests;
+			sourceTree = "<group>";
+		};
+		54F07FF31CE3039F006C63EB /* WezomProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				54F07FF41CE3039F006C63EB /* WezomProjectUITests.swift */,
+				54F07FF61CE3039F006C63EB /* Info.plist */,
+			);
+			path = WezomProjectUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54F07FD01CE3039D006C63EB /* WezomProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54F07FF91CE3039F006C63EB /* Build configuration list for PBXNativeTarget "WezomProject" */;
+			buildPhases = (
+				54F07FCD1CE3039D006C63EB /* Sources */,
+				54F07FCE1CE3039D006C63EB /* Frameworks */,
+				54F07FCF1CE3039D006C63EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WezomProject;
+			productName = WezomProject;
+			productReference = 54F07FD11CE3039E006C63EB /* WezomProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		54F07FE41CE3039F006C63EB /* WezomProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54F07FFC1CE3039F006C63EB /* Build configuration list for PBXNativeTarget "WezomProjectTests" */;
+			buildPhases = (
+				54F07FE11CE3039F006C63EB /* Sources */,
+				54F07FE21CE3039F006C63EB /* Frameworks */,
+				54F07FE31CE3039F006C63EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54F07FE71CE3039F006C63EB /* PBXTargetDependency */,
+			);
+			name = WezomProjectTests;
+			productName = WezomProjectTests;
+			productReference = 54F07FE51CE3039F006C63EB /* WezomProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		54F07FEF1CE3039F006C63EB /* WezomProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54F07FFF1CE3039F006C63EB /* Build configuration list for PBXNativeTarget "WezomProjectUITests" */;
+			buildPhases = (
+				54F07FEC1CE3039F006C63EB /* Sources */,
+				54F07FED1CE3039F006C63EB /* Frameworks */,
+				54F07FEE1CE3039F006C63EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54F07FF21CE3039F006C63EB /* PBXTargetDependency */,
+			);
+			name = WezomProjectUITests;
+			productName = WezomProjectUITests;
+			productReference = 54F07FF01CE3039F006C63EB /* WezomProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54F07FC91CE3039D006C63EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Vitya;
+				TargetAttributes = {
+					54F07FD01CE3039D006C63EB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					54F07FE41CE3039F006C63EB = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 54F07FD01CE3039D006C63EB;
+					};
+					54F07FEF1CE3039F006C63EB = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 54F07FD01CE3039D006C63EB;
+					};
+				};
+			};
+			buildConfigurationList = 54F07FCC1CE3039D006C63EB /* Build configuration list for PBXProject "WezomProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 54F07FC81CE3039D006C63EB;
+			productRefGroup = 54F07FD21CE3039E006C63EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54F07FD01CE3039D006C63EB /* WezomProject */,
+				54F07FE41CE3039F006C63EB /* WezomProjectTests */,
+				54F07FEF1CE3039F006C63EB /* WezomProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54F07FCF1CE3039D006C63EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F07FDF1CE3039E006C63EB /* LaunchScreen.storyboard in Resources */,
+				54F07FDC1CE3039E006C63EB /* Assets.xcassets in Resources */,
+				54F07FDA1CE3039E006C63EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54F07FE31CE3039F006C63EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54F07FEE1CE3039F006C63EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54F07FCD1CE3039D006C63EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F07FD71CE3039E006C63EB /* ViewController.swift in Sources */,
+				54F07FD51CE3039E006C63EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54F07FE11CE3039F006C63EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F07FEA1CE3039F006C63EB /* WezomProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54F07FEC1CE3039F006C63EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54F07FF51CE3039F006C63EB /* WezomProjectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54F07FE71CE3039F006C63EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54F07FD01CE3039D006C63EB /* WezomProject */;
+			targetProxy = 54F07FE61CE3039F006C63EB /* PBXContainerItemProxy */;
+		};
+		54F07FF21CE3039F006C63EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54F07FD01CE3039D006C63EB /* WezomProject */;
+			targetProxy = 54F07FF11CE3039F006C63EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		54F07FD81CE3039E006C63EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54F07FD91CE3039E006C63EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54F07FDE1CE3039E006C63EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54F07FF71CE3039F006C63EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		54F07FF81CE3039F006C63EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54F07FFA1CE3039F006C63EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WezomProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		54F07FFB1CE3039F006C63EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WezomProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		54F07FFD1CE3039F006C63EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WezomProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WezomProject.app/WezomProject";
+			};
+			name = Debug;
+		};
+		54F07FFE1CE3039F006C63EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WezomProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WezomProject.app/WezomProject";
+			};
+			name = Release;
+		};
+		54F080001CE3039F006C63EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WezomProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WezomProject;
+			};
+			name = Debug;
+		};
+		54F080011CE3039F006C63EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WezomProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WezomProject;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54F07FCC1CE3039D006C63EB /* Build configuration list for PBXProject "WezomProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54F07FF71CE3039F006C63EB /* Debug */,
+				54F07FF81CE3039F006C63EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54F07FF91CE3039F006C63EB /* Build configuration list for PBXNativeTarget "WezomProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54F07FFA1CE3039F006C63EB /* Debug */,
+				54F07FFB1CE3039F006C63EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		54F07FFC1CE3039F006C63EB /* Build configuration list for PBXNativeTarget "WezomProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54F07FFD1CE3039F006C63EB /* Debug */,
+				54F07FFE1CE3039F006C63EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		54F07FFF1CE3039F006C63EB /* Build configuration list for PBXNativeTarget "WezomProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54F080001CE3039F006C63EB /* Debug */,
+				54F080011CE3039F006C63EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54F07FC91CE3039D006C63EB /* Project object */;
+}
