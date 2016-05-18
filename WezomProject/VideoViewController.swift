@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
 
 class VideoViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,VideoModelDelegate {
     
@@ -16,6 +18,11 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
     var videos:[Video] = [Video]()
     var model:VideoModel = VideoModel()
     var selectedVideo:Video?
+    
+    let photoCache = AutoPurgingImageCache(
+        memoryCapacity: 100 * 1024 * 1024,
+        preferredMemoryUsageAfterPurge: 60 * 1024 * 1024
+    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +51,9 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         cell.videoTitle.text = videos[indexPath.row].videoTitle
         cell.videoDescription.text = videos[indexPath.row].videoDescription
         
-        
         //get and set image for imageView
         let url = NSURL(string: videos[indexPath.row].videoThumbnailUrl)
-        if let data = NSData(contentsOfURL: url!) {
-                cell.videoImage.image = UIImage(data: data)
-        }
+        cell.videoImage.image = loadImage(url!)
         
         return cell
     }
@@ -76,6 +80,30 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         
         //set the selected video property of the destination view controller
         streamViewController.selectedVideo = self.selectedVideo
+    }
+    
+    func cacheImage(image: Image, urlString: String) {
+        photoCache.addImage(image, withIdentifier: urlString)
+    }
+    
+    func cachedImage(urlString: String) -> Image? {
+        return photoCache.imageWithIdentifier(urlString)
+    }
+    
+    func loadImage(url: NSURL) -> UIImage{
+        if let image = cachedImage(String(url)) {
+            return image
+        }
+      return  downloadImage(url)
+    }
+    
+    func downloadImage(url:NSURL) -> UIImage{
+        
+        let data = NSData(contentsOfURL: url)
+        let image = UIImage(data: data!)
+        cacheImage(image!, urlString: String(url))
+        return image!
+        
     }
 
 }
