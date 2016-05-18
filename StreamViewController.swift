@@ -10,10 +10,11 @@ import UIKit
 
 class StreamViewController: UIViewController {
 
+    @IBOutlet weak var videoTitleTextView: UITextView!
+    @IBOutlet weak var videoDescriptionTextView: UITextView!
     @IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var videoWebView: UIWebView!
-    @IBOutlet weak var videoTitleLabel: UILabel!
-    @IBOutlet weak var videoDescriptionLabel: UILabel!
+   
     var selectedVideo:Video?
     
     override func viewDidLoad() {
@@ -32,8 +33,8 @@ class StreamViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         if let vid = self.selectedVideo {
             
-            self.videoTitleLabel.text = vid.videoTitle
-            self.videoDescriptionLabel.text = vid.videoDescription
+            self.videoTitleTextView.text = vid.videoTitle
+            self.videoDescriptionTextView.text = vid.videoDescription
             
             let width = self.view.frame.size.width
             let height = width/320*180
