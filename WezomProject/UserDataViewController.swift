@@ -26,7 +26,7 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
         
         //set user data
         setUserData()
-  
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +42,36 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
     }
     
     @IBAction func signOutButtonTapped(sender: AnyObject) {
+        signOut()
+    }
+    
+    func setUserData(){
+        userEmailLabel.text = GIDSignIn.sharedInstance().currentUser.profile.email
+        userNameLabel.text = GIDSignIn.sharedInstance().currentUser.profile.name
+        
+        if let url = GIDSignIn.sharedInstance().currentUser.profile.imageURLWithDimension(100) {
+            if let data = NSData(contentsOfURL: url) {
+                userImageView.image = UIImage(data: data)
+            }        
+        }
+    }
+       
+    func showAlertMessage(){
+        let alert = UIAlertController(title: "error", message: "You need to enable live streaming in your YouTube profile", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        // Create the actions
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            self.signOut()
+        }
+        
+        // Add the actions
+        alert.addAction(okAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    func signOut(){
         GIDSignIn.sharedInstance().signOut()
         
         let signInPage = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
@@ -50,47 +80,6 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
         
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = signInPageNav
-        
     }
-
-    @IBAction func getChannelInf(sender: AnyObject) {
-        print("")
-        print("")
-        print("")
-        print("")
-        print("")
-       // model.getInformationAboutChannel()
-      model.setBroadcastsInformation()
-    }
-    
-    func setUserData(){
-        userEmailLabel.text = GIDSignIn.sharedInstance().currentUser.profile.email
-        userNameLabel.text = GIDSignIn.sharedInstance().currentUser.profile.name
-        let url = GIDSignIn.sharedInstance().currentUser.profile.imageURLWithDimension(100)
-      //  let data = NSData(contentsOfURL: url!)
-        print(url)
-        //   titleUserImageView.image = UIImage(data: data!)
-        
-        if let url = GIDSignIn.sharedInstance().currentUser.profile.imageURLWithDimension(100) {
-            if let data = NSData(contentsOfURL: url) {
-                userImageView.image = UIImage(data: data)
-            }        
-        }
-    }
-    
-    @IBAction func insertBroadcust(sender: AnyObject) {
-       model.setBroadcastsInformation()
-        //model.getInformationAboutChannel()
-        
-    }
-      /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -28,7 +28,7 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         super.viewDidLoad()
         
         self.model.delegate = self
-        
+
         //Fire off request to get videos
         model.getBroadcustVideoList()
 

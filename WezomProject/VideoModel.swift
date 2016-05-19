@@ -28,8 +28,9 @@ class VideoModel: NSObject {
         Alamofire.request(.GET, broadcustVideoUrl, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
+                print(JSON)
                 for video in JSON["items"] as! NSArray  {
-                    
+                
                     //Create video object off the JSON response
                     let videoObj = Video()
                     videoObj.videoId = video.valueForKeyPath("id") as! String
@@ -63,25 +64,28 @@ class VideoModel: NSObject {
         
     }
     
-    func setBroadcastsInformation(){
-        let URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
+    func setBroadcastsInformation(title: String, startTime: String, endTime: String, description: String, status: String){
+        let URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts?part=status%2C+snippet&key=\(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
         let dictionarySnippet :Dictionary<String, AnyObject>  = [
-            "title": "some new title2",
-            "scheduledEndTime": "2016-05-16T20:56:39.792+03",
-            "scheduledStartTime": "2016-05-16T18:56:39.792+03"
+            "title": title,
+            "scheduledEndTime": endTime,
+            "scheduledStartTime": startTime,
+            "description" : description
         ]
         
         let dictionaryStatus :Dictionary<String,AnyObject> = [
-            "privacyStatus": "public"
+            "privacyStatus": status
         ]
         
         let dictionaryParameters :Dictionary<String, AnyObject> = [
             "snippet" : dictionarySnippet,
-            "status" : dictionaryStatus]
+            "status" : dictionaryStatus,
+           // "contentDetails" : dictionaryContentDetails
+            ]
         
-        Alamofire.request(.POST, URL, parameters: ["part" : dictionaryParameters, "key":API_KEY], encoding: .JSON, headers: headers
+        Alamofire.request(.POST, URL, parameters: dictionaryParameters, encoding: .JSON, headers: headers
             ).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
@@ -91,17 +95,6 @@ class VideoModel: NSObject {
             }
         }
         
-        print(getDateFormattedISO8601(NSDate()))
-        
-    }
-    
-    func getDateFormattedISO8601(date: NSDate) -> String{
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "el_GR")
-        dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
-        
-        return dateFormatter.stringFromDate(date)
     }
     
 }

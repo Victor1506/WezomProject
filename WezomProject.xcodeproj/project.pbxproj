@@ -10,10 +10,11 @@
 		54AFFC421CE45D4000E12152 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54AFFC411CE45D4000E12152 /* GoogleService-Info.plist */; };
 		54AFFC4B1CE47CC900E12152 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */; };
 		54B5B3611CE5BD95009F540A /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B5B3601CE5BD95009F540A /* StreamViewController.swift */; };
+		54C396721CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */; };
 		54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */; };
 		54EA14C01CE4B2D5009B0A7F /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BF1CE4B2D5009B0A7F /* Video.swift */; };
 		54F07FD51CE3039E006C63EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FD41CE3039E006C63EB /* AppDelegate.swift */; };
-		54F07FD71CE3039E006C63EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FD61CE3039E006C63EB /* ViewController.swift */; };
+		54F07FD71CE3039E006C63EB /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FD61CE3039E006C63EB /* AuthorizationViewController.swift */; };
 		54F07FDA1CE3039E006C63EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F07FD81CE3039E006C63EB /* Main.storyboard */; };
 		54F07FDC1CE3039E006C63EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F07FDB1CE3039E006C63EB /* Assets.xcassets */; };
 		54F07FDF1CE3039E006C63EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */; };
@@ -49,11 +50,12 @@
 		54AFFC451CE461C400E12152 /* WezomProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WezomProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
 		54B5B3601CE5BD95009F540A /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamViewController.swift; path = ../StreamViewController.swift; sourceTree = "<group>"; };
+		54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertBroadcastsViewController.swift; sourceTree = "<group>"; };
 		54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		54EA14BF1CE4B2D5009B0A7F /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		54F07FD11CE3039E006C63EB /* WezomProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WezomProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F07FD41CE3039E006C63EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54F07FD61CE3039E006C63EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		54F07FD61CE3039E006C63EB /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		54F07FD91CE3039E006C63EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54F07FDB1CE3039E006C63EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54F07FDE1CE3039E006C63EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,11 +112,12 @@
 		54B5B3621CE5BE27009F540A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				54F07FD61CE3039E006C63EB /* ViewController.swift */,
+				54F07FD61CE3039E006C63EB /* AuthorizationViewController.swift */,
 				54B5B3601CE5BD95009F540A /* StreamViewController.swift */,
 				54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */,
 				54F978841CEB0320003BA14A /* VodeoCollectionViewCell.swift */,
 				54F978861CEB05CB003BA14A /* VideoViewController.swift */,
+				54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -386,9 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F07FD71CE3039E006C63EB /* ViewController.swift in Sources */,
+				54F07FD71CE3039E006C63EB /* AuthorizationViewController.swift in Sources */,
 				54EA14C01CE4B2D5009B0A7F /* Video.swift in Sources */,
 				54F978871CEB05CB003BA14A /* VideoViewController.swift in Sources */,
+				54C396721CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift in Sources */,
 				54F07FD51CE3039E006C63EB /* AppDelegate.swift in Sources */,
 				54F080041CE30667006C63EB /* Network.swift in Sources */,
 				54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */,
