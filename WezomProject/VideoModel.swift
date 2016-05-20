@@ -28,7 +28,7 @@ class VideoModel: NSObject {
         Alamofire.request(.GET, broadcustVideoUrl, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
-                print(JSON)
+                self.videoArray.removeAll()
                 for video in JSON["items"] as! NSArray  {
                 
                     //Create video object off the JSON response
@@ -38,7 +38,6 @@ class VideoModel: NSObject {
                     videoObj.videoDescription = video.valueForKeyPath("snippet.description") as! String
                     videoObj.videoThumbnailUrl = video.valueForKeyPath("snippet.thumbnails.medium.url") as! String
                     self.videoArray.append(videoObj)
-
                 }
                 
                 //Notify the delegate that the data is ready
@@ -48,20 +47,6 @@ class VideoModel: NSObject {
 
             }
         }
-    }
-    
-    func getInformationAboutChannel(){
-        
-        let URL = "https://www.googleapis.com/youtube/v3/channels"
-        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
-        
-        Alamofire.request(.GET, URL, parameters: ["part" : "brandingSettings", "key":API_KEY,"mine":"true"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
-            
-            if let JSON = response.result.value {
-                
-            }
-        }
-        
     }
     
     func deleteBroadcastById(id: String){

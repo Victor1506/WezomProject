@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelDelegate{
+class UserDataViewController: UIViewController, GIDSignInUIDelegate{
 
     
     @IBOutlet weak var userImageView: UIImageView!
@@ -23,8 +23,6 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
 
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        self.model.delegate = self
-        
         //set user data
         setUserData()
 
@@ -35,11 +33,8 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
         // Dispose of any resources that can be recreated.
     }
     
-    // VideoModel Delegate methods
-    func dataReady() {
-        //access the video object
-        self.videos = self.model.videoArray
-        
+    override func viewWillAppear(animated: Bool) {
+        self.videoViewController.model.getBroadcustVideoList()
     }
     
     @IBAction func signOutButtonTapped(sender: AnyObject) {
@@ -47,7 +42,9 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
     }
     
     @IBAction func refreshButton(sender: AnyObject) {
-        self.videoViewController.dataReady()
+        
+        //Fire off request to get videos
+        self.videoViewController.model.getBroadcustVideoList()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

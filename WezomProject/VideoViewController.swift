@@ -19,6 +19,7 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
     var model:VideoModel = VideoModel()
     var selectedVideo:Video?
     
+    // constant for caching video
     let photoCache = AutoPurgingImageCache(
         memoryCapacity: 100 * 1024 * 1024,
         preferredMemoryUsageAfterPurge: 60 * 1024 * 1024
@@ -55,15 +56,9 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         let url = NSURL(string: videos[indexPath.row].videoThumbnailUrl)
         cell.videoImage.image = loadImage(url!)
         
-        //
-        
-        
-       
-        
+        // create delete Button for collection cell
         cell.deleteButton?.layer.setValue(indexPath.row, forKey: "index")
         cell.deleteButton?.addTarget(self, action: "deleteVideo:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        
         
         return cell
     }
@@ -80,7 +75,6 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
     func dataReady() {
         //access the video object
         self.videos = self.model.videoArray
-        
         self.videoCollectionView.reloadData()
     }
     
@@ -125,9 +119,9 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         
         //delete video from Collection View
         videos.removeAtIndex(i)
+        
         self.videoCollectionView.reloadData()
     }
-    
     
 
     
