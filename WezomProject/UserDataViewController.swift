@@ -8,13 +8,18 @@
 
 import UIKit
 
-class UserDataViewController: UIViewController, GIDSignInUIDelegate{
+class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelModelDelegate{
 
     
+    @IBOutlet weak var userBannerImageView: UIImageView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
+    
     var videoViewController: VideoViewController!
+    var channel:Channel?
+    var channelModel:ChannelModel = ChannelModel()
+    
     var videos:[Video] = [Video]()
     var model:VideoModel = VideoModel()
     
@@ -22,6 +27,9 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate{
         super.viewDidLoad()
 
         GIDSignIn.sharedInstance().uiDelegate = self
+        
+        self.channelModel.channelDelegate = self
+        channelModel.getInformationAboutChannel()
         
         //set user data
         setUserData()
@@ -64,6 +72,7 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate{
                 userImageView.image = UIImage(data: data)
             }        
         }
+        
     }
        
     func showAlertMessage(){
@@ -90,6 +99,20 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate{
         
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = signInPageNav
+    }
+    
+    // VideoModel Delegate methods
+    func channelDataReady() {
+        
+        //access the channel object
+        self.channel = self.channelModel.channelObj
+        
+        let strUrl = self.channel!.channelBannerUrl
+        let bannerUrl = NSURL(string: strUrl)
+        if let bannerData = NSData(contentsOfURL: bannerUrl!){
+            userBannerImageView.image = UIImage(data: bannerData)
+        }
+        
     }
 
 }

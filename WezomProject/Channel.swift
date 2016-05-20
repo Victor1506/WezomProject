@@ -10,4 +10,11 @@ import UIKit
 
 class Channel: NSObject {
 
+    var channelId: String = ""
+    var channelTitle:String = ""
+    var channelDescription:String = ""
+    var channelImageUrl: String = ""
+    var channelBannerUrl: String = ""
+    var channelPublishedAt:String = ""
+    
 }
