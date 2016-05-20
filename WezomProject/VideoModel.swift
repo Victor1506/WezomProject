@@ -64,6 +64,13 @@ class VideoModel: NSObject {
         
     }
     
+    func deleteBroadcastById(id: String){
+        let URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
+        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
+        
+        Alamofire.request(.DELETE, URL, parameters: ["id" : id, "key":API_KEY], encoding: ParameterEncoding.URL, headers: headers)
+    }
+    
     func setBroadcastsInformation(title: String, startTime: String, endTime: String, description: String, status: String){
         let URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts?part=status%2C+snippet&key=\(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
@@ -96,7 +103,6 @@ class VideoModel: NSObject {
         }
         
     }
-    
 }
 
 

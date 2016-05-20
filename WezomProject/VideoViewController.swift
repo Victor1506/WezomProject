@@ -55,6 +55,16 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         let url = NSURL(string: videos[indexPath.row].videoThumbnailUrl)
         cell.videoImage.image = loadImage(url!)
         
+        //
+        
+        
+       
+        
+        cell.deleteButton?.layer.setValue(indexPath.row, forKey: "index")
+        cell.deleteButton?.addTarget(self, action: "deleteVideo:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        
         return cell
     }
     
@@ -105,5 +115,20 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         return image!
         
     }
+    
+    //delete video from Collection View and from YouTube
+    func deleteVideo(sender:UIButton) {
+        let i : Int = (sender.layer.valueForKey("index")) as! Int
+        
+        //delete video from youtube
+        model.deleteBroadcastById(videos[i].videoId)
+        
+        //delete video from Collection View
+        videos.removeAtIndex(i)
+        self.videoCollectionView.reloadData()
+    }
+    
+    
 
+    
 }

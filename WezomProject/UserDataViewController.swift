@@ -14,6 +14,7 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
+    var videoViewController: VideoViewController!
     var videos:[Video] = [Video]()
     var model:VideoModel = VideoModel()
     
@@ -43,6 +44,18 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, VideoModelD
     
     @IBAction func signOutButtonTapped(sender: AnyObject) {
         signOut()
+    }
+    
+    @IBAction func refreshButton(sender: AnyObject) {
+        self.videoViewController.dataReady()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let reference = segue.destinationViewController as? VideoViewController
+            where segue.identifier == "goToVideoView" {
+            
+            self.videoViewController = reference
+        }
     }
     
     func setUserData(){
