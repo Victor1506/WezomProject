@@ -13,6 +13,7 @@
 		54C396721CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */; };
 		54C3F8151CEF03CA000F58C6 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */; };
 		54C3F8171CEF05DA000F58C6 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */; };
+		54D9954D1CF3331600E9B7EE /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */; };
 		54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */; };
 		54EA14C01CE4B2D5009B0A7F /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BF1CE4B2D5009B0A7F /* Video.swift */; };
 		54F07FD51CE3039E006C63EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FD41CE3039E006C63EB /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 		54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertBroadcastsViewController.swift; sourceTree = "<group>"; };
 		54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
+		54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		54EA14BF1CE4B2D5009B0A7F /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		54F07FD11CE3039E006C63EB /* WezomProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WezomProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */,
+				54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				54F978871CEB05CB003BA14A /* VideoViewController.swift in Sources */,
 				54C396721CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift in Sources */,
 				54F07FD51CE3039E006C63EB /* AppDelegate.swift in Sources */,
+				54D9954D1CF3331600E9B7EE /* VideoViewModel.swift in Sources */,
 				54F080041CE30667006C63EB /* Network.swift in Sources */,
 				54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */,
 				54AFFC4B1CE47CC900E12152 /* UserDataViewController.swift in Sources */,

@@ -30,7 +30,7 @@ class ChannelViewModel: NSObject, ChannelModelDelegate {
         self.channelModel.channelDelegate = self
         
         //geting information about channel
-        channelModel.getInformationAboutChannel()
+        self.channelModel.getInformationAboutChannel()
     }
     
     func channelDataReady() {

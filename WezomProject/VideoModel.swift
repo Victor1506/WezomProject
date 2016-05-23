@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 protocol VideoModelDelegate {
-    func dataReady()
+    func videoDataReady()
 }
 
 class VideoModel: NSObject {
@@ -45,7 +45,7 @@ class VideoModel: NSObject {
                 
                 //Notify the delegate that the data is ready
                 if self.delegate != nil {
-                    self.delegate!.dataReady()
+                    self.delegate!.videoDataReady()
                 }
 
             }

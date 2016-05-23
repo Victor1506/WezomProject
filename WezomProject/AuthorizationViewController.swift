@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController, GIDSignInUIDelegate, VideoModelDelegate {
+class ViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var SignInButton: GIDSignInButton!
     var videos:[Video] = [Video]()
@@ -22,21 +22,12 @@ class ViewController: UIViewController, GIDSignInUIDelegate, VideoModelDelegate 
         appendYoutubeScopes()
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        self.model.delegate = self
-        
         GIDSignIn.sharedInstance().signOut()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    //VideoModel Delegate Methods
-    func dataReady(){
-        
-        //Access the video objects that have been downloaded
-        self.videos = self.model.videoArray
     }
    
     // Stop the UIActivityIndicatorView animation that was started when the user

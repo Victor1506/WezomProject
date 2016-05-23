@@ -10,12 +10,12 @@ import UIKit
 import AlamofireImage
 import Alamofire
 
-class VideoViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,VideoModelDelegate {
+class VideoViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,VideoModelDelegate, VideoViewModelDelegate {
     
 
     @IBOutlet weak var videoCollectionView: UICollectionView!
-   // var tableData: [String] = ["first","second","third"]
     var videos:[Video] = [Video]()
+    var videoViewModel = VideoViewModel()
     var model:VideoModel = VideoModel()
     var selectedVideo:Video?
     
@@ -27,6 +27,8 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.videoViewModel.videoViewModelDelegate = self
         
         self.model.delegate = self
 
@@ -74,9 +76,14 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
     }
     
     // VideoModel Delegate methods
-    func dataReady() {
+    func videoDataReady() {
         //access the video object
-        self.videos = self.model.videoArray
+//        self.videos = self.model.videoArray
+//        self.videoCollectionView.reloadData()
+    }
+    
+    func videoViewModelDataReady() {
+        self.videos = videoViewModel.videoArray
         self.videoCollectionView.reloadData()
     }
     

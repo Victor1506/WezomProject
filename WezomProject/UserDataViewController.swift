@@ -37,7 +37,7 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelView
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.videoViewController.model.getBroadcustVideoList()
+         self.videoViewController.videoViewModel.refresh()
     }
     
     @IBAction func signOutButtonTapped(sender: AnyObject) {
@@ -47,7 +47,7 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelView
     @IBAction func refreshButton(sender: AnyObject) {
         
         //Fire off request to get videos
-        self.videoViewController.model.getBroadcustVideoList()
+        self.videoViewController.videoViewModel.refresh()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -82,7 +82,6 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelView
         // Add the actions
         alert.addAction(okAction)
         self.presentViewController(alert, animated: true, completion: nil)
-        
     }
     
     func signOut(){
