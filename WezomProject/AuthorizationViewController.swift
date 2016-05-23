@@ -23,6 +23,8 @@ class ViewController: UIViewController, GIDSignInUIDelegate, VideoModelDelegate 
         GIDSignIn.sharedInstance().uiDelegate = self
         
         self.model.delegate = self
+        
+        GIDSignIn.sharedInstance().signOut()
     }
 
     override func didReceiveMemoryWarning() {

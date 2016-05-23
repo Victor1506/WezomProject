@@ -28,6 +28,9 @@ class VideoModel: NSObject {
         Alamofire.request(.GET, broadcustVideoUrl, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
+                
+                print(JSON)
+                
                 self.videoArray.removeAll()
                 for video in JSON["items"] as! NSArray  {
                 
@@ -47,6 +50,26 @@ class VideoModel: NSObject {
 
             }
         }
+    }
+    
+    func isUserGotPersmission() -> Bool{
+        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
+        let broadcustVideoUrl = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
+        var isPermission = false
+        
+        Alamofire.request(.GET, broadcustVideoUrl, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
+            
+            if let JSON = response.result.value {
+                print(JSON)
+                let error = JSON["error.message"] as! NSArray
+                
+                if error == "The user is not enabled for live streaming." {
+                    print("custom error")
+                }
+                
+            }
+        }
+        return isPermission
     }
     
     func deleteBroadcastById(id: String){

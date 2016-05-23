@@ -53,8 +53,10 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         cell.videoDescription.text = videos[indexPath.row].videoDescription
         
         //get and set image for imageView
-        let url = NSURL(string: videos[indexPath.row].videoThumbnailUrl)
-        cell.videoImage.image = loadImage(url!)
+        if let url = NSURL(string: videos[indexPath.row].videoThumbnailUrl) {
+            loadImageToView(cell.videoImage, url: url)
+        }
+      
         
         // create delete Button for collection cell
         cell.deleteButton?.layer.setValue(indexPath.row, forKey: "index")
@@ -94,20 +96,21 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         return photoCache.imageWithIdentifier(urlString)
     }
     
-    func loadImage(url: NSURL) -> UIImage{
+    func loadImageToView(imageView:UIImageView, url: NSURL){
         if let image = cachedImage(String(url)) {
-            return image
+            imageView.image = image
+        } else {
+        downloadImage(imageView, url: url)
         }
-      return  downloadImage(url)
     }
     
-    func downloadImage(url:NSURL) -> UIImage{
-        
-        let data = NSData(contentsOfURL: url)
-        let image = UIImage(data: data!)
-        cacheImage(image!, urlString: String(url))
-        return image!
-        
+    func downloadImage(imageView:UIImageView, url:NSURL){
+
+        if let data = NSData(contentsOfURL: url){
+        let image = UIImage(data: data)
+            cacheImage(image!, urlString: String(url))
+            imageView.image = image
+        }
     }
     
     //delete video from Collection View and from YouTube

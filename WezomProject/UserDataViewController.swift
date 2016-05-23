@@ -20,9 +20,6 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelMode
     var channel:Channel?
     var channelModel:ChannelModel = ChannelModel()
     
-    var videos:[Video] = [Video]()
-    var model:VideoModel = VideoModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
