@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelModelDelegate{
+class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelViewModelDelegate{
 
     
     @IBOutlet weak var userBannerImageView: UIImageView!
@@ -17,16 +17,14 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelMode
     @IBOutlet weak var userNameLabel: UILabel!
     
     var videoViewController: VideoViewController!
-    var channel:Channel?
-    var channelModel:ChannelModel = ChannelModel()
+    var channelViewModel:ChannelViewModel = ChannelViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        self.channelModel.channelDelegate = self
-        channelModel.getInformationAboutChannel()
+        self.channelViewModel.channelViewModelDelegate = self
         
         //set user data
         setUserData()
@@ -98,18 +96,9 @@ class UserDataViewController: UIViewController, GIDSignInUIDelegate, ChannelMode
         appDelegate.window?.rootViewController = signInPageNav
     }
     
-    // VideoModel Delegate methods
-    func channelDataReady() {
-        
-        //access the channel object
-        self.channel = self.channelModel.channelObj
-        
-        let strUrl = self.channel!.channelBannerUrl
-        let bannerUrl = NSURL(string: strUrl)
-        if let bannerData = NSData(contentsOfURL: bannerUrl!){
-            userBannerImageView.image = UIImage(data: bannerData)
-        }
-        
+    // ChannelVideoModel Delegate method
+    func channelViewModelDataReady() {
+        channelViewModel.downloadImageBannerToView(userBannerImageView)
     }
 
 }

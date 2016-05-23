@@ -15,8 +15,14 @@ protocol ChannelModelDelegate {
 
 class ChannelModel: NSObject {
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
-    let channelObj = Channel()
     var channelDelegate:ChannelModelDelegate?
+    
+    var channelId = ""
+    var channelTitle = ""
+    var channelDescription = ""
+    var channelImageUrl = ""
+    var channelBannerUrl = ""
+    var channelPublishedAt = ""
     
     func getInformationAboutChannel(){
         
@@ -29,15 +35,13 @@ class ChannelModel: NSObject {
 
                  let channel = JSON["items"] as! NSArray
                 
-                self.channelObj.channelId = channel[0].valueForKeyPath("id") as! String
-                self.channelObj.channelTitle = channel[0].valueForKeyPath("snippet.title") as! String
-                self.channelObj.channelDescription = channel[0].valueForKeyPath("snippet.description") as! String
-                self.channelObj.channelImageUrl = channel[0].valueForKeyPath("snippet.thumbnails.medium.url") as! String
-                self.channelObj.channelBannerUrl = channel[0].valueForKeyPath("brandingSettings.image.bannerImageUrl") as! String
-                self.channelObj.channelPublishedAt = channel[0].valueForKeyPath("snippet.publishedAt") as! String
-      
-                }
                 
+                self.channelId = channel[0].valueForKeyPath("id") as! String
+                self.channelTitle = channel[0].valueForKeyPath("snippet.title") as! String
+                self.channelDescription = channel[0].valueForKeyPath("snippet.description") as! String
+                self.channelImageUrl = channel[0].valueForKeyPath("snippet.thumbnails.medium.url") as! String
+                self.channelBannerUrl = channel[0].valueForKeyPath("brandingSettings.image.bannerImageUrl") as! String
+                self.channelPublishedAt = channel[0].valueForKeyPath("snippet.publishedAt") as! String
             
               
                 //Notify the delegate that the data is ready
@@ -48,6 +52,6 @@ class ChannelModel: NSObject {
         }
         
     }
-    
+}
 
 
