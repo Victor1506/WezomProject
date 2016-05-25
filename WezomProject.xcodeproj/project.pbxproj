@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5421EE7F1CF5B2FB0022191F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5421EE7E1CF5B2FB0022191F /* CoreData.framework */; };
+		5421EE811CF5B3120022191F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5421EE801CF5B3120022191F /* SystemConfiguration.framework */; };
+		5421EE831CF5B3260022191F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5421EE821CF5B3260022191F /* libsqlite3.tbd */; };
+		5421EE851CF5B3330022191F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5421EE841CF5B3330022191F /* libz.tbd */; };
+		54AAE0C01CF5D88B00070AD3 /* Pods_WezomProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FCF0DD62A4ABCFF9F5D5AE /* Pods_WezomProject.framework */; };
+		54AAE0C11CF5D88B00070AD3 /* Pods_WezomProject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62FCF0DD62A4ABCFF9F5D5AE /* Pods_WezomProject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		54AFFC421CE45D4000E12152 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54AFFC411CE45D4000E12152 /* GoogleService-Info.plist */; };
 		54AFFC4B1CE47CC900E12152 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */; };
 		54B5B3611CE5BD95009F540A /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B5B3601CE5BD95009F540A /* StreamViewController.swift */; };
 		54C396721CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */; };
 		54C3F8151CEF03CA000F58C6 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */; };
 		54C3F8171CEF05DA000F58C6 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */; };
+		54C9FFCD1CF41848000790BC /* LiveStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */; };
 		54D9954D1CF3331600E9B7EE /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */; };
 		54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */; };
 		54EA14C01CE4B2D5009B0A7F /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BF1CE4B2D5009B0A7F /* Video.swift */; };
@@ -47,8 +54,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		54AAE0C21CF5D88B00070AD3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				54AAE0C11CF5D88B00070AD3 /* Pods_WezomProject.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B9F5069267237231DA241AE /* Pods-WezomProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WezomProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-WezomProject/Pods-WezomProject.release.xcconfig"; sourceTree = "<group>"; };
+		5421EE7E1CF5B2FB0022191F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5421EE801CF5B3120022191F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5421EE821CF5B3260022191F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5421EE841CF5B3330022191F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		54AFFC411CE45D4000E12152 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54AFFC451CE461C400E12152 /* WezomProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WezomProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +81,7 @@
 		54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertBroadcastsViewController.swift; sourceTree = "<group>"; };
 		54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
+		54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveStreamViewController.swift; sourceTree = "<group>"; };
 		54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		54EA14BF1CE4B2D5009B0A7F /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -85,6 +111,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5421EE851CF5B3330022191F /* libz.tbd in Frameworks */,
+				54AAE0C01CF5D88B00070AD3 /* Pods_WezomProject.framework in Frameworks */,
+				5421EE831CF5B3260022191F /* libsqlite3.tbd in Frameworks */,
+				5421EE811CF5B3120022191F /* SystemConfiguration.framework in Frameworks */,
+				5421EE7F1CF5B2FB0022191F /* CoreData.framework in Frameworks */,
 				A810DA3A3E02AF637D6DF242 /* Pods_WezomProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				54AFFC451CE461C400E12152 /* WezomProject-Bridging-Header.h */,
+				54AFFC411CE45D4000E12152 /* GoogleService-Info.plist */,
 			);
 			name = "Bridging-header";
 			sourceTree = "<group>";
@@ -191,7 +223,6 @@
 				54D9954B1CF2F19A00E9B7EE /* ViewModel */,
 				54B5B3631CE5BE51009F540A /* Model */,
 				54B5B3621CE5BE27009F540A /* Controller */,
-				54AFFC411CE45D4000E12152 /* GoogleService-Info.plist */,
 				54C3F8121CEED8D5000F58C6 /* VideoList */,
 				54F080021CE30650006C63EB /* Classes */,
 				54F07FD41CE3039E006C63EB /* AppDelegate.swift */,
@@ -200,6 +231,7 @@
 				54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */,
 				54F07FE01CE3039E006C63EB /* Info.plist */,
 				54F080051CE30694006C63EB /* View.xib */,
+				54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */,
 			);
 			path = WezomProject;
 			sourceTree = "<group>";
@@ -233,6 +265,10 @@
 		D4E185DB0B74C751BBCC69E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5421EE841CF5B3330022191F /* libz.tbd */,
+				5421EE821CF5B3260022191F /* libsqlite3.tbd */,
+				5421EE801CF5B3120022191F /* SystemConfiguration.framework */,
+				5421EE7E1CF5B2FB0022191F /* CoreData.framework */,
 				62FCF0DD62A4ABCFF9F5D5AE /* Pods_WezomProject.framework */,
 			);
 			name = Frameworks;
@@ -251,6 +287,7 @@
 				54F07FCF1CE3039D006C63EB /* Resources */,
 				1428F7149F93C3C389B3C401 /* Embed Pods Frameworks */,
 				A833961D6FAAF7068A1D67C0 /* Copy Pods Resources */,
+				54AAE0C21CF5D88B00070AD3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +346,7 @@
 				TargetAttributes = {
 					54F07FD01CE3039D006C63EB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9ENH4749Q9;
 					};
 					54F07FE41CE3039F006C63EB = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -432,6 +470,7 @@
 				54D9954D1CF3331600E9B7EE /* VideoViewModel.swift in Sources */,
 				54F080041CE30667006C63EB /* Network.swift in Sources */,
 				54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */,
+				54C9FFCD1CF41848000790BC /* LiveStreamViewController.swift in Sources */,
 				54AFFC4B1CE47CC900E12152 /* UserDataViewController.swift in Sources */,
 				54F978851CEB0320003BA14A /* VodeoCollectionViewCell.swift in Sources */,
 				54B5B3611CE5BD95009F540A /* StreamViewController.swift in Sources */,
@@ -580,10 +619,101 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Google/Headers",
+					"${PODS_ROOT}/boost",
+					"\"${PODS_ROOT}/boost\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAppUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAuthUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleNetworkingUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/boost\"",
+					"\"${PODS_ROOT}/Headers/Public/glm\"",
+					"Pods/VideoCore/api/iOS/**",
+				);
 				INFOPLIST_FILE = WezomProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Google/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Google/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleAppUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleAuthUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleAuthUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleSignIn/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleSignIn/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib/CommLibiOS",
+					"$(PROJECT_DIR)/lib/MediaLibiOS3x",
+					"$(PROJECT_DIR)/lib/libav-11.4/MediaLibDemos-master",
+					"$(PROJECT_DIR)/MediaLibDemos-master/lib/CommLibiOS",
+					"$(PROJECT_DIR)/MediaLibDemos-master/lib/libav-11.4/lib",
+					"$(PROJECT_DIR)/MediaLibDemos-master/lib/MediaLibiOS",
+					"$(PROJECT_DIR)/VKSwift/VideoKit/3rd-party/ffmpeg/lib",
+					"$(PROJECT_DIR)/VKSwift/VideoKit/3rd-party/openSSL/lib",
+					"$(PROJECT_DIR)/VKSwift/VideoKit/Core",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WezomProject/WezomProject-Bridging-Header.h";
 				"SWIFT_OBJC_INTERFACE_HEADER_NAME[arch=*]" = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -596,10 +726,101 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Google/Headers",
+					"${PODS_ROOT}/boost",
+					"\"${PODS_ROOT}/boost\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAppUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAuthUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleInterchangeUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleNetworkingUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/boost\"",
+					"\"${PODS_ROOT}/Headers/Public/glm\"",
+					"Pods/VideoCore/api/iOS/**",
+				);
 				INFOPLIST_FILE = WezomProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Google/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Google/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleAppUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleAuthUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleAuthUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleSignIn/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleSignIn/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/GoogleUtilities/Libraries\"",
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib/CommLibiOS",
+					"$(PROJECT_DIR)/lib/MediaLibiOS3x",
+					"$(PROJECT_DIR)/lib/libav-11.4/MediaLibDemos-master",
+					"$(PROJECT_DIR)/MediaLibDemos-master/lib/CommLibiOS",
+					"$(PROJECT_DIR)/MediaLibDemos-master/lib/libav-11.4/lib",
+					"$(PROJECT_DIR)/MediaLibDemos-master/lib/MediaLibiOS",
+					"$(PROJECT_DIR)/VKSwift/VideoKit/3rd-party/ffmpeg/lib",
+					"$(PROJECT_DIR)/VKSwift/VideoKit/3rd-party/openSSL/lib",
+					"$(PROJECT_DIR)/VKSwift/VideoKit/Core",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WezomProject/WezomProject-Bridging-Header.h";
 				"SWIFT_OBJC_INTERFACE_HEADER_NAME[arch=*]" = "$(SWIFT_MODULE_NAME)-Swift.h";
 			};

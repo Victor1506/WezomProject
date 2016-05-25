@@ -19,21 +19,17 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appendYoutubeScopes()
+        //set scope
+        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/youtube")
+
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        GIDSignIn.sharedInstance().signOut()
+       // GIDSignIn.sharedInstance().signOut()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-   
-    // Stop the UIActivityIndicatorView animation that was started when the user
-    // pressed the Sign In button
-    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
-      //  myActivityIndicator.stopAnimating()
     }
     
     // Present a view that prompts the user to sign in with Google
@@ -50,13 +46,6 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
         
         print("sign in dismessed")
-    }
-    
-    func appendYoutubeScopes(){
-        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/youtube")
-        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/youtube.upload")
-        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/youtube.force-ssl")
-        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/youtube.readonly")
     }
     
 }

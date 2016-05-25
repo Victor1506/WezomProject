@@ -15,11 +15,14 @@ class InsertBroadcastsViewController: UIViewController {
     @IBOutlet weak var startTimeTextField: UITextField!
     @IBOutlet weak var endTimeTextField: UITextField!
     @IBOutlet weak var videoDescriptionTextView: UITextView!
-    var model:VideoModel = VideoModel()
+    
+    var videoViewModel = VideoViewModel()
     let datePickerView:UIDatePicker = UIDatePicker()
-    var whotTextField = ""
+    
+    var whotTextFieldSet = ""
     let startTimer = "startTimer"
     let endTimer = "endTimer"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,12 +36,12 @@ class InsertBroadcastsViewController: UIViewController {
     
     @IBAction func startTimeTextEdit(sender: UITextField) {
         showDatePicker(sender)
-        whotTextField = startTimer
+        whotTextFieldSet = startTimer
     }
     
     @IBAction func endTimeTextEdit(sender: UITextField) {
         showDatePicker(sender)
-        whotTextField = endTimer
+        whotTextFieldSet = endTimer
     }
     
     @IBAction func okButton(sender: UIButton) {
@@ -47,7 +50,7 @@ class InsertBroadcastsViewController: UIViewController {
             createAlert("error", message: "Fill in all fields")
         } else{
             if videoStatusTextField.text == "public" || videoStatusTextField.text == "private" || videoStatusTextField.text == "unlisted" {
-        model.setBroadcastsInformation(videoTitleTextField.text!, startTime: startTimeTextField.text!, endTime: endTimeTextField.text!, description: videoDescriptionTextView.text, status: videoStatusTextField.text!)
+        videoViewModel.setBroadcastInformation(videoTitleTextField.text!, startTime: startTimeTextField.text!, endTime: endTimeTextField.text!, description: videoDescriptionTextView.text, status: videoStatusTextField.text!)
         createAlert("message", message: "broadcast wos added")
             } else {
                 createAlert("error", message: "Valid values for status are: public, private, unlisted")
@@ -57,17 +60,14 @@ class InsertBroadcastsViewController: UIViewController {
     
     func datePickerValueChanged(sender:UIDatePicker) {
         
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.locale = NSLocale(localeIdentifier: "el_GR")
-//        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-//        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        
+        //set format for datePicker
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "el_GR")
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
         
-        switch whotTextField {
+        //check whot fiald is set
+        switch whotTextFieldSet {
         case startTimer:
             startTimeTextField.text = dateFormatter.stringFromDate(sender.date)
         case endTimer:
@@ -92,14 +92,6 @@ class InsertBroadcastsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
-//    func getDateFormattedISO8601(strDate: String) -> String{
-//        let dateFormatter = NSDateFormatter()
-//        let date = dateFormatter.dateFromString(strDate)
-//        dateFormatter.locale = NSLocale(localeIdentifier: "el_GR")
-//        dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
-//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
-//        return dateFormatter.stringFromDate(date!)
-//    }
 
 
 }

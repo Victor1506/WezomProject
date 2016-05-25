@@ -16,7 +16,6 @@ protocol VideoModelDelegate {
 class VideoModel: NSObject {
     
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
-    let UPLOADS_PLAYLIST_ID = "PLMRqhzcHGw1aLoz4pM_Mg2TewmJcMg9ua"
     
     var videoArray = [Video]()
     
@@ -79,7 +78,7 @@ class VideoModel: NSObject {
         Alamofire.request(.DELETE, URL, parameters: ["id" : id, "key":API_KEY], encoding: ParameterEncoding.URL, headers: headers)
     }
     
-    func setBroadcastsInformation(title: String, startTime: String, endTime: String, description: String, status: String){
+    func sendBroadcastInformation(title: String, startTime: String, endTime: String, description: String, status: String){
         let URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts?part=status%2C+snippet&key=\(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         

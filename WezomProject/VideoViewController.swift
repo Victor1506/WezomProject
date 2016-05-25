@@ -7,34 +7,20 @@
 //
 
 import UIKit
-import AlamofireImage
 import Alamofire
 
-class VideoViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,VideoModelDelegate, VideoViewModelDelegate {
+class VideoViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, VideoViewModelDelegate {
     
 
     @IBOutlet weak var videoCollectionView: UICollectionView!
     var videos:[Video] = [Video]()
     var videoViewModel = VideoViewModel()
-    var model:VideoModel = VideoModel()
     var selectedVideo:Video?
-    
-    // constant for caching video
-    let photoCache = AutoPurgingImageCache(
-        memoryCapacity: 100 * 1024 * 1024,
-        preferredMemoryUsageAfterPurge: 60 * 1024 * 1024
-    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.videoViewModel.videoViewModelDelegate = self
-        
-        self.model.delegate = self
-
-        //Fire off request to get videos
-        model.getBroadcustVideoList()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,9 +42,8 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         
         //get and set image for imageView
         if let url = NSURL(string: videos[indexPath.row].videoThumbnailUrl) {
-            loadImageToView(cell.videoImage, url: url)
+            videoViewModel.loadImageToView(cell.videoImage, url: url)
         }
-      
         
         // create delete Button for collection cell
         cell.deleteButton?.layer.setValue(indexPath.row, forKey: "index")
@@ -75,13 +60,7 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         self.performSegueWithIdentifier("goToStreamView", sender: self)
     }
     
-    // VideoModel Delegate methods
-    func videoDataReady() {
-        //access the video object
-//        self.videos = self.model.videoArray
-//        self.videoCollectionView.reloadData()
-    }
-    
+    // VideoViewModel Delegate method
     func videoViewModelDataReady() {
         self.videos = videoViewModel.videoArray
         self.videoCollectionView.reloadData()
@@ -95,44 +74,17 @@ class VideoViewController: UIViewController, UICollectionViewDataSource,UICollec
         streamViewController.selectedVideo = self.selectedVideo
     }
     
-    func cacheImage(image: Image, urlString: String) {
-        photoCache.addImage(image, withIdentifier: urlString)
-    }
-    
-    func cachedImage(urlString: String) -> Image? {
-        return photoCache.imageWithIdentifier(urlString)
-    }
-    
-    func loadImageToView(imageView:UIImageView, url: NSURL){
-        if let image = cachedImage(String(url)) {
-            imageView.image = image
-        } else {
-        downloadImage(imageView, url: url)
-        }
-    }
-    
-    func downloadImage(imageView:UIImageView, url:NSURL){
-
-        if let data = NSData(contentsOfURL: url){
-        let image = UIImage(data: data)
-            cacheImage(image!, urlString: String(url))
-            imageView.image = image
-        }
-    }
-    
     //delete video from Collection View and from YouTube
     func deleteVideo(sender:UIButton) {
         let i : Int = (sender.layer.valueForKey("index")) as! Int
         
         //delete video from youtube
-        model.deleteBroadcastById(videos[i].videoId)
+        videoViewModel.deleteBroadcastByID(videos[i].videoId)
         
         //delete video from Collection View
         videos.removeAtIndex(i)
         
         self.videoCollectionView.reloadData()
     }
-    
-
     
 }
