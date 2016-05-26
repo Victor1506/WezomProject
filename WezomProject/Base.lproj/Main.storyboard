@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tCZ-jf-qic">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6sU-YQ-Yw1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -401,58 +401,74 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K17-Tk-l6N">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-5z-s58">
-                                        <rect key="frame" x="203" y="562" width="32" height="30"/>
-                                        <state key="normal" title="start">
-                                            <color key="titleColor" red="0.0" green="0.42094699736160646" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="startSessionButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="w4q-xJ-vZM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaD-LO-GLz">
-                                        <rect key="frame" x="243" y="562" width="51" height="30"/>
-                                        <state key="normal" title="camera"/>
-                                        <connections>
-                                            <action selector="cameraChangeButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="pwh-x6-mPS"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd7-Gp-FI3">
-                                        <rect key="frame" x="303" y="562" width="45" height="30"/>
-                                        <state key="normal" title="bitrate"/>
-                                        <connections>
-                                            <action selector="bitrateChangeButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="s5K-5g-JkL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-AI-tqS">
-                                        <rect key="frame" x="360" y="562" width="38" height="30"/>
-                                        <state key="normal" title="audio"/>
-                                        <connections>
-                                            <action selector="audioMuteButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="FIR-kX-bOM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
                                 <color key="backgroundColor" red="0.85860475352112675" green="0.85860475352112675" blue="0.85860475352112675" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Kd7-Gp-FI3" firstAttribute="leading" secondItem="KaD-LO-GLz" secondAttribute="trailing" constant="9" id="HJw-Ne-qV7"/>
-                                    <constraint firstItem="Ig3-AI-tqS" firstAttribute="leading" secondItem="Kd7-Gp-FI3" secondAttribute="trailing" constant="12" id="Ihs-38-eZH"/>
-                                    <constraint firstItem="KaD-LO-GLz" firstAttribute="centerX" secondItem="K17-Tk-l6N" secondAttribute="centerX" constant="-31.5" id="KOD-Bp-dui"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kd7-Gp-FI3" secondAttribute="bottom" constant="8" id="Lx7-fb-KP1"/>
-                                    <constraint firstAttribute="bottom" secondItem="e8d-5z-s58" secondAttribute="bottom" constant="8" id="NCE-sS-X5u"/>
-                                    <constraint firstItem="KaD-LO-GLz" firstAttribute="leading" secondItem="e8d-5z-s58" secondAttribute="trailing" constant="8" id="WUW-Eu-fUW"/>
-                                    <constraint firstAttribute="bottom" secondItem="KaD-LO-GLz" secondAttribute="bottom" constant="8" id="drr-zt-Q7w"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ig3-AI-tqS" secondAttribute="bottom" constant="8" id="jE2-Qs-bDb"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-5z-s58">
+                                <rect key="frame" x="216" y="550" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="SfP-kh-fIs"/>
+                                    <constraint firstAttribute="height" constant="30" id="XgQ-GH-b9D"/>
+                                </constraints>
+                                <state key="normal" image="Start">
+                                    <color key="titleColor" red="0.0" green="0.42094699736160646" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startSessionButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="w4q-xJ-vZM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaD-LO-GLz">
+                                <rect key="frame" x="254" y="550" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="89Y-Vo-HVW"/>
+                                    <constraint firstAttribute="width" constant="30" id="vhg-IJ-q5n"/>
+                                </constraints>
+                                <state key="normal" image="Switch-Camera"/>
+                                <connections>
+                                    <action selector="cameraChangeButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="pwh-x6-mPS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-AI-tqS">
+                                <rect key="frame" x="292" y="550" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="qmX-9Q-xuT"/>
+                                    <constraint firstAttribute="height" constant="30" id="wM5-rJ-ahq"/>
+                                </constraints>
+                                <state key="normal" image="Microphone-On" backgroundImage="Microphone-On"/>
+                                <connections>
+                                    <action selector="audioMuteButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="FIR-kX-bOM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd7-Gp-FI3">
+                                <rect key="frame" x="324" y="550" width="61" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="48o-bw-9oe"/>
+                                    <constraint firstAttribute="height" constant="30" id="aer-rg-odd"/>
+                                </constraints>
+                                <state key="normal" title="1080p.">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bitrateChangeButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="s5K-5g-JkL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="K17-Tk-l6N" secondAttribute="bottom" id="FM1-27-zJE"/>
-                            <constraint firstItem="K17-Tk-l6N" firstAttribute="leading" secondItem="Hbd-AQ-emv" secondAttribute="leading" id="Nci-uD-oeY"/>
-                            <constraint firstItem="K17-Tk-l6N" firstAttribute="top" secondItem="Hbd-AQ-emv" secondAttribute="top" id="Rdf-Oo-Yhl"/>
-                            <constraint firstAttribute="trailing" secondItem="K17-Tk-l6N" secondAttribute="trailing" id="blP-8y-nxD"/>
+                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="Ig3-AI-tqS" secondAttribute="bottom" constant="20" id="8P8-sT-Lu0"/>
+                            <constraint firstItem="Ig3-AI-tqS" firstAttribute="leading" secondItem="Kd7-Gp-FI3" secondAttribute="trailing" constant="-93" id="Owl-2z-h5n"/>
+                            <constraint firstItem="KaD-LO-GLz" firstAttribute="leading" secondItem="e8d-5z-s58" secondAttribute="trailing" constant="8" id="Tks-r2-qOT"/>
+                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="Ig3-AI-tqS" secondAttribute="bottom" constant="20" id="Vde-Pr-368"/>
+                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="Kd7-Gp-FI3" secondAttribute="bottom" constant="20" id="Ykf-HH-mzg"/>
+                            <constraint firstItem="e8d-5z-s58" firstAttribute="centerX" secondItem="Hbd-AQ-emv" secondAttribute="centerX" constant="-69" id="Zpx-l8-GgF"/>
+                            <constraint firstAttribute="trailing" secondItem="K17-Tk-l6N" secondAttribute="trailing" id="ctc-KJ-cwO"/>
+                            <constraint firstItem="K17-Tk-l6N" firstAttribute="leading" secondItem="Hbd-AQ-emv" secondAttribute="leading" id="gQF-Ou-Hfv"/>
+                            <constraint firstItem="K17-Tk-l6N" firstAttribute="top" secondItem="Hbd-AQ-emv" secondAttribute="top" id="ifi-NB-b4M"/>
+                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="Ig3-AI-tqS" secondAttribute="bottom" constant="20" id="oGx-MS-f7d"/>
+                            <constraint firstItem="Kd7-Gp-FI3" firstAttribute="leading" secondItem="KaD-LO-GLz" secondAttribute="trailing" constant="40" id="sl3-2Z-ciw"/>
+                            <constraint firstItem="Kd7-Gp-FI3" firstAttribute="top" secondItem="K17-Tk-l6N" secondAttribute="bottom" constant="25" id="v0R-AR-gGE"/>
+                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="KaD-LO-GLz" secondAttribute="bottom" constant="20" id="wAF-3G-lKE"/>
+                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="e8d-5z-s58" secondAttribute="bottom" constant="20" id="yAe-ZZ-2Jf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -562,4 +578,9 @@
             <point key="canvasLocation" x="2473" y="743"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Microphone-On" width="50" height="50"/>
+        <image name="Start" width="48" height="48"/>
+        <image name="Switch-Camera" width="48" height="48"/>
+    </resources>
 </document>
