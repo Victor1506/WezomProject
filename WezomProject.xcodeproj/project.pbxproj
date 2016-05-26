@@ -77,7 +77,7 @@
 		54AFFC411CE45D4000E12152 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54AFFC451CE461C400E12152 /* WezomProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WezomProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
-		54B5B3601CE5BD95009F540A /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamViewController.swift; path = ../StreamViewController.swift; sourceTree = "<group>"; };
+		54B5B3601CE5BD95009F540A /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertBroadcastsViewController.swift; sourceTree = "<group>"; };
 		54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
@@ -150,39 +150,39 @@
 			isa = PBXGroup;
 			children = (
 				54F07FD61CE3039E006C63EB /* AuthorizationViewController.swift */,
-				54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */,
 				54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */,
+				54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		54B5B3631CE5BE51009F540A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */,
-				54EA14BF1CE4B2D5009B0A7F /* Video.swift */,
 				54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */,
+				54EA14BF1CE4B2D5009B0A7F /* Video.swift */,
+				54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		54C3F8121CEED8D5000F58C6 /* VideoList */ = {
 			isa = PBXGroup;
 			children = (
+				54B5B3601CE5BD95009F540A /* StreamViewController.swift */,
 				54F978861CEB05CB003BA14A /* VideoViewController.swift */,
 				54F978841CEB0320003BA14A /* VodeoCollectionViewCell.swift */,
-				54B5B3601CE5BD95009F540A /* StreamViewController.swift */,
 			);
-			name = VideoList;
+			path = VideoList;
 			sourceTree = "<group>";
 		};
 		54C3F8131CEED97C000F58C6 /* Bridging-header */ = {
 			isa = PBXGroup;
 			children = (
-				54AFFC451CE461C400E12152 /* WezomProject-Bridging-Header.h */,
 				54AFFC411CE45D4000E12152 /* GoogleService-Info.plist */,
+				54AFFC451CE461C400E12152 /* WezomProject-Bridging-Header.h */,
 			);
-			name = "Bridging-header";
+			path = "Bridging-header";
 			sourceTree = "<group>";
 		};
 		54D9954B1CF2F19A00E9B7EE /* ViewModel */ = {
@@ -191,18 +191,18 @@
 				54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */,
 				54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */,
 			);
-			name = ViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		54F07FC81CE3039D006C63EB = {
 			isa = PBXGroup;
 			children = (
+				D4E185DB0B74C751BBCC69E8 /* Frameworks */,
+				2BE37E1E97A27F7133E8055B /* Pods */,
+				54F07FD21CE3039E006C63EB /* Products */,
 				54F07FD31CE3039E006C63EB /* WezomProject */,
 				54F07FE81CE3039F006C63EB /* WezomProjectTests */,
 				54F07FF31CE3039F006C63EB /* WezomProjectUITests */,
-				54F07FD21CE3039E006C63EB /* Products */,
-				2BE37E1E97A27F7133E8055B /* Pods */,
-				D4E185DB0B74C751BBCC69E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,18 +220,18 @@
 			isa = PBXGroup;
 			children = (
 				54C3F8131CEED97C000F58C6 /* Bridging-header */,
-				54D9954B1CF2F19A00E9B7EE /* ViewModel */,
-				54B5B3631CE5BE51009F540A /* Model */,
-				54B5B3621CE5BE27009F540A /* Controller */,
-				54C3F8121CEED8D5000F58C6 /* VideoList */,
 				54F080021CE30650006C63EB /* Classes */,
+				54B5B3621CE5BE27009F540A /* Controller */,
+				54B5B3631CE5BE51009F540A /* Model */,
+				54C3F8121CEED8D5000F58C6 /* VideoList */,
+				54D9954B1CF2F19A00E9B7EE /* ViewModel */,
 				54F07FD41CE3039E006C63EB /* AppDelegate.swift */,
-				54F07FD81CE3039E006C63EB /* Main.storyboard */,
 				54F07FDB1CE3039E006C63EB /* Assets.xcassets */,
-				54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */,
 				54F07FE01CE3039E006C63EB /* Info.plist */,
-				54F080051CE30694006C63EB /* View.xib */,
+				54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */,
 				54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */,
+				54F07FD81CE3039E006C63EB /* Main.storyboard */,
+				54F080051CE30694006C63EB /* View.xib */,
 			);
 			path = WezomProject;
 			sourceTree = "<group>";
@@ -239,8 +239,8 @@
 		54F07FE81CE3039F006C63EB /* WezomProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				54F07FE91CE3039F006C63EB /* WezomProjectTests.swift */,
 				54F07FEB1CE3039F006C63EB /* Info.plist */,
+				54F07FE91CE3039F006C63EB /* WezomProjectTests.swift */,
 			);
 			path = WezomProjectTests;
 			sourceTree = "<group>";
@@ -248,8 +248,8 @@
 		54F07FF31CE3039F006C63EB /* WezomProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
-				54F07FF41CE3039F006C63EB /* WezomProjectUITests.swift */,
 				54F07FF61CE3039F006C63EB /* Info.plist */,
+				54F07FF41CE3039F006C63EB /* WezomProjectUITests.swift */,
 			);
 			path = WezomProjectUITests;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			children = (
 				54F080031CE30667006C63EB /* Network.swift */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		D4E185DB0B74C751BBCC69E8 /* Frameworks */ = {
@@ -515,6 +515,7 @@
 				54F07FD91CE3039E006C63EB /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */ = {
@@ -523,6 +524,7 @@
 				54F07FDE1CE3039E006C63EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -714,7 +716,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WezomProject/WezomProject-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WezomProject/Bridging-header/WezomProject-Bridging-Header.h";
 				"SWIFT_OBJC_INTERFACE_HEADER_NAME[arch=*]" = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -821,7 +823,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.WezomProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WezomProject/WezomProject-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WezomProject/Bridging-header/WezomProject-Bridging-Header.h";
 				"SWIFT_OBJC_INTERFACE_HEADER_NAME[arch=*]" = "$(SWIFT_MODULE_NAME)-Swift.h";
 			};
 			name = Release;

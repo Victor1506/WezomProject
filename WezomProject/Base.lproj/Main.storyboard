@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6sU-YQ-Yw1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tCZ-jf-qic">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -389,34 +389,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K17-Tk-l6N">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="548"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaD-LO-GLz">
+                                        <rect key="frame" x="308" y="498" width="51" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="51" id="GKR-WV-gPF"/>
+                                            <constraint firstAttribute="height" constant="30" id="dxt-6E-xpn"/>
+                                        </constraints>
+                                        <state key="normal" title="camera"/>
+                                        <connections>
+                                            <action selector="cameraChangeButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="pwh-x6-mPS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-5z-s58">
+                                        <rect key="frame" x="259" y="498" width="32" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="TOS-ko-Be7"/>
+                                        </constraints>
+                                        <state key="normal" title="start">
+                                            <color key="titleColor" red="0.46383916567799899" green="0.39296377853101161" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startSessionButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="w4q-xJ-vZM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.85860475352112675" green="0.85860475352112675" blue="0.85860475352112675" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KaD-LO-GLz" firstAttribute="centerX" secondItem="K17-Tk-l6N" secondAttribute="centerX" constant="33.5" id="h9E-G6-Y9r"/>
+                                    <constraint firstAttribute="bottom" secondItem="KaD-LO-GLz" secondAttribute="bottom" constant="20" id="vCf-oH-zW8"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-5z-s58">
-                                <rect key="frame" x="284" y="550" width="32" height="30"/>
-                                <state key="normal" title="start"/>
-                                <connections>
-                                    <action selector="startSessionButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="w4q-xJ-vZM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaD-LO-GLz">
-                                <rect key="frame" x="366" y="550" width="51" height="30"/>
-                                <state key="normal" title="camera"/>
-                                <connections>
-                                    <action selector="cameraChangeButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="pwh-x6-mPS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="e8d-5z-s58" secondAttribute="bottom" constant="20" id="EQk-6B-sB4"/>
-                            <constraint firstItem="e8d-5z-s58" firstAttribute="centerX" secondItem="Hbd-AQ-emv" secondAttribute="centerX" id="NOo-nc-mJm"/>
-                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="KaD-LO-GLz" secondAttribute="bottom" constant="20" id="O68-zS-oKG"/>
-                            <constraint firstItem="KaD-LO-GLz" firstAttribute="leading" secondItem="e8d-5z-s58" secondAttribute="trailing" constant="50" id="VPv-TF-KZg"/>
-                            <constraint firstItem="K17-Tk-l6N" firstAttribute="leading" secondItem="Hbd-AQ-emv" secondAttribute="leading" id="Xlh-2P-bpc"/>
-                            <constraint firstItem="e8d-5z-s58" firstAttribute="top" secondItem="K17-Tk-l6N" secondAttribute="bottom" constant="250" id="deQ-um-05d"/>
-                            <constraint firstAttribute="trailing" secondItem="K17-Tk-l6N" secondAttribute="trailing" id="sTp-5f-Eil"/>
-                            <constraint firstItem="K17-Tk-l6N" firstAttribute="top" secondItem="Hbd-AQ-emv" secondAttribute="top" id="zCI-gq-FNT"/>
+                            <constraint firstItem="K17-Tk-l6N" firstAttribute="top" secondItem="Hbd-AQ-emv" secondAttribute="top" id="0tg-9H-vRJ"/>
+                            <constraint firstAttribute="bottom" secondItem="K17-Tk-l6N" secondAttribute="bottom" constant="52" id="Ov0-9E-RKN"/>
+                            <constraint firstAttribute="trailing" secondItem="K17-Tk-l6N" secondAttribute="trailing" id="SFA-8N-kxM"/>
+                            <constraint firstItem="K17-Tk-l6N" firstAttribute="leading" secondItem="Hbd-AQ-emv" secondAttribute="leading" id="Zvw-vx-kXE"/>
                         </constraints>
                     </view>
                     <connections>
