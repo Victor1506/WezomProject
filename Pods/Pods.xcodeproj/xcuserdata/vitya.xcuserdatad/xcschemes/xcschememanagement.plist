@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WezomProject.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UriParser-cpp.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VideoCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1477A12B3C68B7B55C0409535ED87D8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41A06790101A11CF2FFF8EB34F426FBE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63784DCC81CFBCE19749903CC14770E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB531BA7EEBB204E57BAB818E31BD079</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC207C89CD15DA0B90525FE6318509F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
