@@ -15,15 +15,13 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate{
     
     @IBOutlet weak var preview: UIView!
     @IBOutlet weak var connectButton: UIButton!
-    var rtmpStream: RTMPStream!
-    var rtmpConnection: RTMPConnection!
+    @IBOutlet weak var cameraButton: UIButton!
     
     var session:VCSimpleSession = VCSimpleSession(videoSize: CGSize(width: 1280, height: 720), frameRate: 30, bitrate: 1000000, useInterfaceOrientation: false)
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       // createLiveStream()
         
         preview.addSubview(session.previewView)
         session.previewView.frame = preview.bounds
@@ -42,12 +40,28 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate{
     @IBAction func startSessionButton(sender: AnyObject) {
         switch session.rtmpSessionState {
         case .None, .PreviewStarted, .Ended, .Error:
-            session.startRtmpSessionWithURL("rtmp://a.rtmp.youtube.com/live2", andStreamKey: "wku9-c9qf-8sjk-ccwc")
+            session.startRtmpSessionWithURL("rtmp://a.rtmp.youtube.com/live2", andStreamKey: "4f31-2xeb-c7dj-8x26")
         default:
             session.endRtmpSession()
             break
         }
     }
+    
+    @IBAction func cameraChangeButton(sender: AnyObject) {
+        switch (session.cameraState) {
+        case VCCameraState.Front:
+            session.cameraState = VCCameraState.Back
+            cameraButton.setTitle("front", forState: .Normal)
+            break
+        case VCCameraState.Back:
+            session.cameraState = VCCameraState.Front
+            cameraButton.setTitle("back", forState: .Normal)
+            break
+        default:
+            break
+        }
+    }
+    
     
     func connectionStatusChanged(sessionState: VCSessionState) {
         switch session.rtmpSessionState {
@@ -61,24 +75,12 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate{
             connectButton.setTitle("Connect", forState: .Normal)
         }
     }
-
-    func createLiveStream(){
-        var rtmpConnection:RTMPConnection = RTMPConnection()
-        var rtmpStream = RTMPStream(rtmpConnection: rtmpConnection)
-        //rtmpStream.view.frame = CGRect(x: 0, y: 0, width: 400, height: 272)
-        rtmpStream.view.frame = self.preview.bounds
-        rtmpStream.view.videoGravity = AVLayerVideoGravityResizeAspectFill
-        rtmpStream.attachAudio(AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio))
-        rtmpStream.attachCamera(AVMixer.deviceWithPosition(.Back))
-        rtmpStream.videoSettings = [
-            "width": 640, // video output width
-            "height": 360, // video output height
-        ]
-        
-        self.preview.addSubview(rtmpStream.view)
-        rtmpConnection.connect("rtmp://a.rtmp.youtube.com/live2")
-        rtmpStream.publish("wku9-c9qf-8sjk-ccwc")
+    
+    func changeBitrate(){
+    //session.bitrate
+        session.audioSampleRate = 0
     }
+
 
 }
 

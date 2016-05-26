@@ -399,11 +399,20 @@
                                     <action selector="startSessionButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="w4q-xJ-vZM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaD-LO-GLz">
+                                <rect key="frame" x="366" y="550" width="51" height="30"/>
+                                <state key="normal" title="camera"/>
+                                <connections>
+                                    <action selector="cameraChangeButton:" destination="6sU-YQ-Yw1" eventType="touchUpInside" id="pwh-x6-mPS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="e8d-5z-s58" secondAttribute="bottom" constant="20" id="EQk-6B-sB4"/>
                             <constraint firstItem="e8d-5z-s58" firstAttribute="centerX" secondItem="Hbd-AQ-emv" secondAttribute="centerX" id="NOo-nc-mJm"/>
+                            <constraint firstItem="bpZ-xS-QKd" firstAttribute="top" secondItem="KaD-LO-GLz" secondAttribute="bottom" constant="20" id="O68-zS-oKG"/>
+                            <constraint firstItem="KaD-LO-GLz" firstAttribute="leading" secondItem="e8d-5z-s58" secondAttribute="trailing" constant="50" id="VPv-TF-KZg"/>
                             <constraint firstItem="K17-Tk-l6N" firstAttribute="leading" secondItem="Hbd-AQ-emv" secondAttribute="leading" id="Xlh-2P-bpc"/>
                             <constraint firstItem="e8d-5z-s58" firstAttribute="top" secondItem="K17-Tk-l6N" secondAttribute="bottom" constant="250" id="deQ-um-05d"/>
                             <constraint firstAttribute="trailing" secondItem="K17-Tk-l6N" secondAttribute="trailing" id="sTp-5f-Eil"/>
@@ -411,6 +420,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="KaD-LO-GLz" id="ags-6z-hbc"/>
                         <outlet property="connectButton" destination="e8d-5z-s58" id="rok-Xg-X13"/>
                         <outlet property="preview" destination="K17-Tk-l6N" id="3eP-no-1Nm"/>
                     </connections>
