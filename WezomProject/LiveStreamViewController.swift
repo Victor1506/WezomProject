@@ -15,6 +15,8 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate{
     @IBOutlet weak var preview: UIView!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var bitrateButton: UIButton!
+    @IBOutlet weak var audioButton: UIButton!
     
     var session:VCSimpleSession = VCSimpleSession(videoSize: CGSize(width: 1280, height: 720), frameRate: 30, bitrate: 1000000, useInterfaceOrientation: false)
     
@@ -23,6 +25,7 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate{
         super.viewDidLoad()
         
         preview.addSubview(session.previewView)
+        addButtonsOnView()
         session.previewView.frame = preview.bounds
         session.delegate = self
     }
@@ -61,6 +64,19 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate{
         }
     }
     
+    @IBAction func bitrateChangeButton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func audioMuteButton(sender: AnyObject) {
+        switch (session.micGain) {
+        case 0.000001:
+            session.micGain = 1
+        default:
+            session.micGain = 0.000001
+        }
+    }
+    
     
     func connectionStatusChanged(sessionState: VCSessionState) {
         switch session.rtmpSessionState {
@@ -75,9 +91,11 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate{
         }
     }
     
-    func changeBitrate(){
-    //session.bitrate
-        session.audioSampleRate = 0
+    func addButtonsOnView(){
+        preview.addSubview(cameraButton)
+        preview.addSubview(connectButton)
+        preview.addSubview(bitrateButton)
+        preview.addSubview(audioButton)
     }
 
 
