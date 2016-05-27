@@ -12,8 +12,8 @@ import Alamofire
 class ViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var SignInButton: GIDSignInButton!
-    var videos:[Video] = [Video]()
-    var model:VideoModel = VideoModel()
+    var videos = [Video]()
+    var model = VideoModel()
     
     
     override func viewDidLoad() {
@@ -27,11 +27,6 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
        // GIDSignIn.sharedInstance().signOut()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // Present a view that prompts the user to sign in with Google
     func signIn(signIn: GIDSignIn!,
                 presentViewController viewController: UIViewController!) {

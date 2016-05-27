@@ -6,7 +6,6 @@
 //  Copyright © 2016 Vitya. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 
 protocol VideoModelDelegate {
@@ -16,15 +15,22 @@ protocol VideoModelDelegate {
 class VideoModel: NSObject {
     
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
+    let BROADCAST_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
     
     var videoArray = [Video]()
     
     var delegate:VideoModelDelegate?
     
+    var persistentBroadcastID = ""
+    var persistentBroadcastTitle = ""
+    var persistentBroadcastBoundStreamId = ""
+    var boundStreamLastUpdateTimeMs = ""
+    var persistentBroadcastDescription = ""
+    
     func getBroadcustVideoList(){
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
-        let broadcustVideoUrl = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
-        Alamofire.request(.GET, broadcustVideoUrl, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
+
+        Alamofire.request(.GET, BROADCAST_VIDEO_URL, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
                 
@@ -35,7 +41,7 @@ class VideoModel: NSObject {
                 
                     //Create video object off the JSON response
                     let videoObj = Video()
-                    videoObj.videoId = video.valueForKeyPath("id") as! String
+                    videoObj.videoId = video.valueForKeyPath("id") as? String ?? "0"
                     videoObj.videoTitle = video.valueForKeyPath("snippet.title") as! String
                     videoObj.videoDescription = video.valueForKeyPath("snippet.description") as! String
                     videoObj.videoThumbnailUrl = video.valueForKeyPath("snippet.thumbnails.medium.url") as! String
@@ -53,10 +59,10 @@ class VideoModel: NSObject {
     
     func isUserGotPersmission() -> Bool{
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
-        let broadcustVideoUrl = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
+
         var isPermission = false
         
-        Alamofire.request(.GET, broadcustVideoUrl, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
+        Alamofire.request(.GET, BROADCAST_VIDEO_URL, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
                 print(JSON)
@@ -72,10 +78,10 @@ class VideoModel: NSObject {
     }
     
     func deleteBroadcastById(id: String){
-        let URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
+
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
-        Alamofire.request(.DELETE, URL, parameters: ["id" : id, "key":API_KEY], encoding: ParameterEncoding.URL, headers: headers)
+        Alamofire.request(.DELETE, BROADCAST_VIDEO_URL, parameters: ["id" : id, "key":API_KEY], encoding: ParameterEncoding.URL, headers: headers)
     }
     
     func sendBroadcastInformation(title: String, startTime: String, endTime: String, description: String, status: String){
@@ -110,6 +116,8 @@ class VideoModel: NSObject {
         }
         
     }
+    
+    
 }
 
 

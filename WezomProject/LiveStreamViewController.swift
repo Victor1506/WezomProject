@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class LiveStreamViewController: UIViewController, VCSessionDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class LiveStreamViewController: UIViewController, VCSessionDelegate, PBViewModelDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
     @IBOutlet weak var preview: UIView!
     @IBOutlet weak var connectButton: UIButton!
@@ -18,9 +18,11 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate, UIPickerVie
     @IBOutlet weak var bitrateButton: UIButton!
     @IBOutlet weak var audioButton: UIButton!
     
+    var persBroadViewModel = PersistentBroadcastViewModel()
+    
     var bitratePickerArr = ["240p", "360p", "480p", "720p", "1080p"]
     var bitratePickerView: UIPickerView = UIPickerView()
-    var session:VCSimpleSession = VCSimpleSession(videoSize: CGSize(width: 1920, height: 1080), frameRate: 30, bitrate: 1000, useInterfaceOrientation: false)
+    var session:VCSimpleSession = VCSimpleSession(videoSize: CGSize(width:  1280, height: 720), frameRate: 30, bitrate: 500000, useInterfaceOrientation: false)
     
     
     override func viewDidLoad() {
@@ -148,6 +150,10 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate, UIPickerVie
         default:
             print("incorrect resolution")
         }
+    }
+    
+    func broadcastViewModelDataReady(){
+        
     }
 }
 

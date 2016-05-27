@@ -70,6 +70,7 @@ class InsertBroadcastsViewController: UIViewController {
         switch whotTextFieldSet {
         case startTimer:
             startTimeTextField.text = dateFormatter.stringFromDate(sender.date)
+            print(dateFormatter.stringFromDate(sender.date))
         case endTimer:
              endTimeTextField.text = dateFormatter.stringFromDate(sender.date)
         default:

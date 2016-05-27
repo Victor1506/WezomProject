@@ -6,7 +6,6 @@
 //  Copyright © 2016 Vitya. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 
 protocol ChannelModelDelegate {
@@ -36,7 +35,7 @@ class ChannelModel: NSObject {
                  let channel = JSON["items"] as! NSArray
                 
                 
-                self.channelId = channel[0].valueForKeyPath("id") as! String
+                self.channelId = channel[0].valueForKeyPath("id") as? String ?? "0"
                 self.channelTitle = channel[0].valueForKeyPath("snippet.title") as! String
                 self.channelDescription = channel[0].valueForKeyPath("snippet.description") as! String
                 self.channelImageUrl = channel[0].valueForKeyPath("snippet.thumbnails.medium.url") as! String

@@ -6,7 +6,6 @@
 //  Copyright © 2016 Vitya. All rights reserved.
 //
 
-import UIKit
 
 protocol ChannelViewModelDelegate {
     func channelViewModelDataReady()
