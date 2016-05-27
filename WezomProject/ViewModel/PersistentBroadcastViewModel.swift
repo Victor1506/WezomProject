@@ -78,10 +78,6 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
         session.micGain = 1
     }
     
-    func setSessionPreviewAsView(view: UIView){
-        session.previewView.frame = view.bounds
-    }
-    
     func setSessionPreview(view: CGRect){
         session.previewView.frame = view
     }
@@ -96,6 +92,26 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
     
     func setBitrate(bitrate : Int32){
         session.bitrate = bitrate
+    }
+    
+    func getSessionPreview() -> UIView{
+       return session.previewView
+    }
+    
+    func deinitSession(){
+        session.delegate = nil
+    }
+    
+    func sessionState() -> VCSessionState{
+       return session.rtmpSessionState
+    }
+    
+    func sessionCameraState() -> VCCameraState {
+       return session.cameraState
+    }
+    
+    func sessionMicroGain() -> Float{
+        return session.micGain
     }
     
     func connectionStatusChanged(sessionState: VCSessionState) {

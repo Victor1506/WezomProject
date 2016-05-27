@@ -15,6 +15,7 @@ protocol PBModelDelegate {
 class PersistentBroadcastModel: NSObject {
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
     let BROADCAST_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
+    let STREAM_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveStreams"
     
     var persBroadModelDelegate:PBModelDelegate?
     
@@ -57,9 +58,10 @@ class PersistentBroadcastModel: NSObject {
     func getPersistentStream() {
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
-        Alamofire.request(.GET, BROADCAST_VIDEO_URL, parameters: ["part" : "snippet, contentDetails", "key":API_KEY,"broadcastType":"persistent","mine":"true"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
+        Alamofire.request(.GET, STREAM_VIDEO_URL, parameters: ["part" : "snippet, cdn", "key":API_KEY,"id":persistentBroadcastBoundStreamId], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
+                print(JSON)
                 
                 let persStream = JSON["items"] as! NSArray
                 
@@ -71,7 +73,7 @@ class PersistentBroadcastModel: NSObject {
                 self.persistentStreamBackupIngestionAddress = persStream[0].valueForKeyPath("cdn.ingestionInfo.backupIngestionAddress") as! String
                 self.persistentStreamResolution = persStream[0].valueForKeyPath("cdn.resolution") as! String
                 self.persistentStreamFrameRate = persStream[0].valueForKeyPath("cdn.frameRate") as! String
-                
+
                 //Notify the delegate that the data is ready
                 if self.persBroadModelDelegate != nil {
                     self.persBroadModelDelegate!.persBroadDataReady()

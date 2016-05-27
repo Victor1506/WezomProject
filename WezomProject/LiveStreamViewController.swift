@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class LiveStreamViewController: UIViewController, VCSessionDelegate, PBViewModelDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
     @IBOutlet weak var preview: UIView!
     @IBOutlet weak var connectButton: UIButton!
@@ -22,20 +22,17 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate, PBViewModel
     
     var bitratePickerArr = ["240p", "360p", "480p", "720p", "1080p"]
     var bitratePickerView: UIPickerView = UIPickerView()
-    var session:VCSimpleSession = VCSimpleSession(videoSize: CGSize(width:  1280, height: 720), frameRate: 30, bitrate: 500000, useInterfaceOrientation: false)
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //add components in main view
-        preview.addSubview(session.previewView)
+        preview.addSubview(persBroadViewModel.getSessionPreview())
         addButtonsOnView()
         preview.addSubview(bitratePickerView)
         
         //session setting
-        session.previewView.frame = preview.bounds
-        session.delegate = self
+        persBroadViewModel.setSessionPreview(preview.bounds)
         
         //create custom Picker View
         bitratePickerView.hidden = true
@@ -49,26 +46,26 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate, PBViewModel
     }
     
     deinit {
-        session.delegate = nil;
+        persBroadViewModel.deinitSession()
     }
     
     @IBAction func startSessionButton(sender: AnyObject) {
-        switch session.rtmpSessionState {
+        switch persBroadViewModel.sessionState() {
         case .None, .PreviewStarted, .Ended, .Error:
-            session.startRtmpSessionWithURL("rtmp://a.rtmp.youtube.com/live2", andStreamKey: "4f31-2xeb-c7dj-8x26")
+            persBroadViewModel.startVideoSession()
         default:
-            session.endRtmpSession()
+            persBroadViewModel.stopVideoSession()
             break
         }
     }
     
     @IBAction func cameraChangeButton(sender: AnyObject) {
-        switch (session.cameraState) {
+        switch (persBroadViewModel.sessionCameraState()) {
         case VCCameraState.Front:
-            session.cameraState = VCCameraState.Back
+            persBroadViewModel.sessionCameraBack()
             break
         case VCCameraState.Back:
-            session.cameraState = VCCameraState.Front
+            persBroadViewModel.sessionCameraFront()
             break
         default:
             break
@@ -82,32 +79,19 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate, PBViewModel
     }
     
     @IBAction func audioMuteButton(sender: AnyObject) {
-        switch (session.micGain) {
+        switch (persBroadViewModel.sessionMicroGain()) {
         case 0.000001:
-            session.micGain = 1
+            persBroadViewModel.microOn()
             let image = UIImage(named: "Microphone-On.png")! as UIImage
             audioButton.setImage(image, forState: .Normal)
         default:
-            session.micGain = 0.000001
+            persBroadViewModel.microOff()
             let image = UIImage(named: "Microphone-Off.png")! as UIImage
             audioButton.setImage(image, forState: .Normal)
         }
     }
     
-    func connectionStatusChanged(sessionState: VCSessionState) {
-        switch session.rtmpSessionState {
-        case .Starting:
-            let image = UIImage(named: "Start.png")! as UIImage
-            connectButton.setImage(image, forState: .Normal)
-        case .Started:
-            let image = UIImage(named: "Stop.png")! as UIImage
-            connectButton.setImage(image, forState: .Normal)
-            
-        default:
-            let image = UIImage(named: "Start.png")! as UIImage
-            connectButton.setImage(image, forState: .Normal)
-        }
-    }
+   
     
     func addButtonsOnView(){
 //        preview.addSubview(cameraButton)
@@ -138,15 +122,15 @@ class LiveStreamViewController: UIViewController, VCSessionDelegate, PBViewModel
     func setBitrate(videoResolution: String){
         switch videoResolution {
         case "1080p":
-             session.bitrate = 5000
+            persBroadViewModel.setBitrate(5000)
         case "720p":
-            session.bitrate = 3900
+            persBroadViewModel.setBitrate(3900)
         case "480p":
-             session.bitrate = 1900
+            persBroadViewModel.setBitrate(1900)
         case "360p":
-             session.bitrate = 900
+            persBroadViewModel.setBitrate(900)
         case "240p":
-             session.bitrate = 600
+            persBroadViewModel.setBitrate(600)
         default:
             print("incorrect resolution")
         }
