@@ -53,10 +53,28 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         switch persBroadViewModel.sessionState() {
         case .None, .PreviewStarted, .Ended, .Error:
             persBroadViewModel.startVideoSession()
+            bitrateButton.hidden = true
+            
+            //set image on button
+            let image = UIImage(named: "Stop.png")! as UIImage
+            connectButton.setImage(image, forState: .Normal)
+        case .Started, .Starting:
+            persBroadViewModel.stopVideoSession()
+            persBroadViewModel.deinitSession()
+            
+            //set image on button
+            let image = UIImage(named: "Start.png")! as UIImage
+            connectButton.setImage(image, forState: .Normal)
         default:
             persBroadViewModel.stopVideoSession()
+            persBroadViewModel.deinitSession()
+            
+            //set image on button
+            let image = UIImage(named: "Start.png")! as UIImage
+            connectButton.setImage(image, forState: .Normal)
             break
         }
+        
     }
     
     @IBAction func cameraChangeButton(sender: AnyObject) {
@@ -110,7 +128,8 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         bitrateButton.setTitle(bitratePickerArr[row], forState: .Normal)
-        setBitrate(bitratePickerArr[row])
+//        setBitrate(bitratePickerArr[row])
+        persBroadViewModel.setResolution(bitratePickerArr[row])
         pickerView.hidden = true
     }
     
@@ -119,22 +138,6 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         return attributedString
     }
     
-    func setBitrate(videoResolution: String){
-        switch videoResolution {
-        case "1080p":
-            persBroadViewModel.setBitrate(5000)
-        case "720p":
-            persBroadViewModel.setBitrate(3900)
-        case "480p":
-            persBroadViewModel.setBitrate(1900)
-        case "360p":
-            persBroadViewModel.setBitrate(900)
-        case "240p":
-            persBroadViewModel.setBitrate(600)
-        default:
-            print("incorrect resolution")
-        }
-    }
     
     func broadcastViewModelDataReady(){
         

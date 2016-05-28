@@ -14,7 +14,7 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
 
     let persBroadModel = PersistentBroadcastModel()
     var pBroadViewModelDelegate: PBViewModelDelegate?
-    var session = VCSimpleSession(videoSize: CGSize(width:  1280, height: 720), frameRate: 30, bitrate: 500000, useInterfaceOrientation: false)
+    var session = VCSimpleSession(videoSize: CGSize(width:  426, height: 240), frameRate: 30, bitrate: 500000, useInterfaceOrientation: false)
     
     var persistentBroadcastID = ""
     var persistentBroadcastTitle = ""
@@ -112,6 +112,23 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
     
     func sessionMicroGain() -> Float{
         return session.micGain
+    }
+    
+    func setResolution(resolution: String){
+        switch resolution {
+        case "1080p":
+            session.videoSize = CGSize(width:  1920, height: 1080)
+        case "720p":
+            session.videoSize = CGSize(width: 1280, height: 720)
+        case "480p":
+            session.videoSize = CGSize(width: 854, height: 480)
+        case "360p":
+            session.videoSize = CGSize(width: 640, height: 360)
+        case "240p":
+            session.videoSize = CGSize(width: 426, height: 240)
+        default:
+            print("incorrect resosution")
+        }
     }
     
     func connectionStatusChanged(sessionState: VCSessionState) {

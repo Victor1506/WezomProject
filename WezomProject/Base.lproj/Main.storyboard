@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Authorization-->
@@ -92,39 +93,51 @@
                                     <segue destination="Ra0-ZB-X5m" kind="show" id="jnN-7y-tmy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBJ-XN-GxF">
-                                <rect key="frame" x="533" y="173" width="49" height="30"/>
-                                <state key="normal" title="refresh"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0u-tD-W1W">
+                                <rect key="frame" x="380" y="173" width="75" height="30"/>
+                                <state key="normal" title="live stream"/>
                                 <connections>
-                                    <action selector="refreshButton:" destination="bhp-5O-3IT" eventType="touchUpInside" id="F4G-nw-ng0"/>
+                                    <segue destination="6sU-YQ-Yw1" kind="show" id="CiL-P9-zsO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NBJ-XN-GxF" firstAttribute="top" secondItem="jTA-5Q-sGO" secondAttribute="bottom" constant="20" id="01E-ex-3BJ"/>
                             <constraint firstItem="jTA-5Q-sGO" firstAttribute="centerX" secondItem="NgT-bZ-8Wc" secondAttribute="centerX" id="0gi-Aa-s9M"/>
                             <constraint firstItem="jTA-5Q-sGO" firstAttribute="top" secondItem="RfC-V3-piR" secondAttribute="bottom" id="DFA-QD-AJU"/>
                             <constraint firstItem="TQK-Le-eKL" firstAttribute="centerX" secondItem="Lxx-Xx-o3e" secondAttribute="centerX" constant="1" id="J0P-zT-0FS"/>
                             <constraint firstItem="TQK-Le-eKL" firstAttribute="centerX" secondItem="jTA-5Q-sGO" secondAttribute="centerX" constant="1" id="JU8-P6-jUI"/>
                             <constraint firstItem="Lxx-Xx-o3e" firstAttribute="leading" secondItem="NgT-bZ-8Wc" secondAttribute="leadingMargin" constant="-20" id="KN1-Pi-GeB"/>
+                            <constraint firstItem="W0u-tD-W1W" firstAttribute="top" secondItem="jTA-5Q-sGO" secondAttribute="bottom" constant="20" id="Qxg-5W-ePY"/>
                             <constraint firstItem="TQK-Le-eKL" firstAttribute="top" secondItem="jTA-5Q-sGO" secondAttribute="bottom" constant="20" id="emg-8f-BZA"/>
-                            <constraint firstAttribute="trailing" secondItem="NBJ-XN-GxF" secondAttribute="trailing" constant="18" id="jxX-RX-cUV"/>
+                            <constraint firstItem="W0u-tD-W1W" firstAttribute="leading" secondItem="TQK-Le-eKL" secondAttribute="trailing" constant="23" id="fkW-Pe-wFo"/>
                             <constraint firstItem="Lxx-Xx-o3e" firstAttribute="top" secondItem="TQK-Le-eKL" secondAttribute="bottom" constant="25" id="nHu-HJ-4pA"/>
                             <constraint firstItem="Lxx-Xx-o3e" firstAttribute="centerY" secondItem="NgT-bZ-8Wc" secondAttribute="centerY" constant="114" id="xce-tP-BcS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="User data" id="lfd-tF-Eq2">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="rb7-QP-jOs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Py-al-tf1">
-                                <rect key="frame" x="523" y="7" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign out"/>
-                                <connections>
-                                    <action selector="signOutButtonTapped:" destination="bhp-5O-3IT" eventType="touchUpInside" id="8BG-e8-Lnt"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="rb7-QP-jOs">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Py-al-tf1">
+                                    <rect key="frame" x="523" y="7" width="57" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Sign out"/>
+                                    <connections>
+                                        <action selector="signOutButtonTapped:" destination="bhp-5O-3IT" eventType="touchUpInside" id="8BG-e8-Lnt"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="61F-t8-RVW">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NBJ-XN-GxF">
+                                    <rect key="frame" x="466" y="7" width="49" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="refresh"/>
+                                    <connections>
+                                        <action selector="refreshButton:" destination="bhp-5O-3IT" eventType="touchUpInside" id="F4G-nw-ng0"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="userBannerImageView" destination="jTA-5Q-sGO" id="XV9-fG-cvc"/>
@@ -135,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPg-0U-2wP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2473" y="73"/>
+            <point key="canvasLocation" x="2515" y="73"/>
         </scene>
         <!--Insert Broadcasts View Controller-->
         <scene sceneID="zjM-rR-0yj">
@@ -232,16 +245,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmJ-4q-LAj">
-                                <rect key="frame" x="296" y="550" width="75" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="QPz-ZH-sFE"/>
-                                </constraints>
-                                <state key="normal" title="live stream"/>
-                                <connections>
-                                    <segue destination="6sU-YQ-Yw1" kind="show" id="I3l-bW-ANN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -252,7 +255,6 @@
                             <constraint firstItem="gWy-rf-9Bc" firstAttribute="top" secondItem="f2v-Sx-jvy" secondAttribute="bottom" constant="19" id="9Kq-T3-cqo"/>
                             <constraint firstItem="vux-2k-xgf" firstAttribute="top" secondItem="gWy-rf-9Bc" secondAttribute="bottom" constant="16" id="ARK-vk-3JN"/>
                             <constraint firstItem="vux-2k-xgf" firstAttribute="leading" secondItem="c2G-yB-geS" secondAttribute="trailing" constant="41" id="BS6-PB-8T5"/>
-                            <constraint firstItem="AmJ-4q-LAj" firstAttribute="leading" secondItem="J2e-qP-YcC" secondAttribute="trailing" constant="8" id="Ckh-kj-PF6"/>
                             <constraint firstItem="f2v-Sx-jvy" firstAttribute="leading" secondItem="JO9-yY-ZOC" secondAttribute="trailing" constant="56" id="Du3-RH-RIr"/>
                             <constraint firstItem="f2v-Sx-jvy" firstAttribute="top" secondItem="NTt-EP-Uj0" secondAttribute="bottom" constant="8" id="H75-xI-NER"/>
                             <constraint firstItem="gWy-rf-9Bc" firstAttribute="leading" secondItem="rbd-hW-7tT" secondAttribute="trailing" constant="51" id="HfZ-OE-pbD"/>
@@ -275,7 +277,6 @@
                             <constraint firstItem="z6z-mJ-pp9" firstAttribute="top" secondItem="vux-2k-xgf" secondAttribute="bottom" constant="74" id="rZq-gu-0QA"/>
                             <constraint firstItem="mN5-mk-8aA" firstAttribute="leading" secondItem="M2u-ba-hr6" secondAttribute="leading" constant="33" id="rec-kQ-Wit"/>
                             <constraint firstItem="c2G-yB-geS" firstAttribute="width" secondItem="rbd-hW-7tT" secondAttribute="width" constant="10" id="tqf-AG-Xpe"/>
-                            <constraint firstItem="xqX-Ks-pbR" firstAttribute="top" secondItem="AmJ-4q-LAj" secondAttribute="bottom" constant="20" id="w65-ru-9wr"/>
                             <constraint firstItem="YXI-sP-ImN" firstAttribute="trailing" secondItem="M2u-ba-hr6" secondAttribute="trailingMargin" id="zoi-o6-kZP"/>
                         </constraints>
                     </view>
@@ -289,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnL-wG-qkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3287" y="73"/>
+            <point key="canvasLocation" x="3267" y="-653"/>
         </scene>
         <!--Stream View Controller-->
         <scene sceneID="7m4-ou-exX">
@@ -445,7 +446,7 @@
                                     <constraint firstAttribute="width" constant="61" id="48o-bw-9oe"/>
                                     <constraint firstAttribute="height" constant="30" id="aer-rg-odd"/>
                                 </constraints>
-                                <state key="normal" title="1080p.">
+                                <state key="normal" title="240p.">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -481,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnR-as-Xio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4102" y="67"/>
+            <point key="canvasLocation" x="3258" y="127"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="VI4-CM-vxU">
