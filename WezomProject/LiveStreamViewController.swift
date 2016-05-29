@@ -112,10 +112,10 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
    
     
     func addButtonsOnView(){
-//        preview.addSubview(cameraButton)
-//        preview.addSubview(connectButton)
-//        preview.addSubview(bitrateButton)
-      //  preview.addSubview(audioButton)
+        preview.addSubview(cameraButton)
+        preview.addSubview(connectButton)
+        preview.addSubview(bitrateButton)
+        preview.addSubview(audioButton)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -128,9 +128,11 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         bitrateButton.setTitle(bitratePickerArr[row], forState: .Normal)
-//        setBitrate(bitratePickerArr[row])
+        
+        //set video resolution
         persBroadViewModel.setResolution(bitratePickerArr[row])
         pickerView.hidden = true
+      
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {

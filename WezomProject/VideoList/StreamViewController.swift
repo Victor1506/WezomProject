@@ -21,8 +21,9 @@ class StreamViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
        
+//  self.videoWebView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin
+//        videoWebView.autoresizingMask =
     }
 
     override func viewDidAppear(animated: Bool) {

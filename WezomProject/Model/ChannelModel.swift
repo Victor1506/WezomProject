@@ -12,10 +12,20 @@ protocol ChannelModelDelegate {
     func channelDataReady()
 }
 
-class ChannelModel: NSObject {
-    let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
-    var channelDelegate:ChannelModelDelegate?
+class ChannelModel: NSObject, ChannelDataDelegate {
     
+    var channelDelegate:ChannelModelDelegate?
+    var network = Network()
+    
+    // MARK: Declaration for string constants to be used to decode and also serialize.
+    internal let kChannelId: String = "id"
+    internal let kChannelTitle: String = "snippet.title"
+    internal let kChannelDescription: String = "snippet.description"
+    internal let kChannelImageUrl: String = "snippet.thumbnails.medium.url"
+    internal let kChannelBannerUrl: String = "brandingSettings.image.bannerImageUrl"
+    internal let kChannelPublishedAt: String = "snippet.publishedAt"
+    
+    // MARK: Properties
     var channelId = ""
     var channelTitle = ""
     var channelDescription = ""
@@ -23,33 +33,28 @@ class ChannelModel: NSObject {
     var channelBannerUrl = ""
     var channelPublishedAt = ""
     
-    func getInformationAboutChannel(){
+    override init() {
+        super.init()
         
-        let URL = "https://www.googleapis.com/youtube/v3/channels"
-        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
+        self.network.channelDataDelegate = self
         
-        Alamofire.request(.GET, URL, parameters: ["part" : "snippet,brandingSettings", "key":API_KEY,"mine":"true"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
-            
-            if let JSON = response.result.value {
-
-                 let channel = JSON["items"] as! NSArray
-                
-                
-                self.channelId = channel[0].valueForKeyPath("id") as? String ?? "0"
-                self.channelTitle = channel[0].valueForKeyPath("snippet.title") as! String
-                self.channelDescription = channel[0].valueForKeyPath("snippet.description") as! String
-                self.channelImageUrl = channel[0].valueForKeyPath("snippet.thumbnails.medium.url") as! String
-                self.channelBannerUrl = channel[0].valueForKeyPath("brandingSettings.image.bannerImageUrl") as! String
-                self.channelPublishedAt = channel[0].valueForKeyPath("snippet.publishedAt") as! String
-            
-              
-                //Notify the delegate that the data is ready
-                if self.channelDelegate != nil {
-                    self.channelDelegate!.channelDataReady()
-                }
-            }
+        //MARK: Send a request to retrieve data
+        network.getInformationAboutChannel()
+    }
+    
+    //MARK: parse json when data ready
+    func channelDataReady(jsonAray: NSArray) {
+        self.channelId = jsonAray[0].valueForKeyPath(kChannelId) as? String ?? "0"
+        self.channelTitle = jsonAray[0].valueForKeyPath(kChannelTitle) as! String
+        self.channelDescription = jsonAray[0].valueForKeyPath(kChannelDescription) as! String
+        self.channelImageUrl = jsonAray[0].valueForKeyPath(kChannelImageUrl) as! String
+        self.channelBannerUrl = jsonAray[0].valueForKeyPath(kChannelBannerUrl) as! String
+        self.channelPublishedAt = jsonAray[0].valueForKeyPath(kChannelPublishedAt) as! String
+        
+        print("data ready \(channelTitle)")
+        if self.channelDelegate != nil {
+            self.channelDelegate!.channelDataReady()
         }
-        
     }
 }
 
