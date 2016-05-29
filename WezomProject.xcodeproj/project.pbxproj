@@ -87,7 +87,7 @@
 		54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertBroadcastsViewController.swift; sourceTree = "<group>"; };
 		54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
-		54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveStreamViewController.swift; path = ../LiveStreamViewController.swift; sourceTree = "<group>"; };
+		54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveStreamViewController.swift; sourceTree = "<group>"; };
 		54CE9FB21CFAE12A004B3D70 /* APIPersistentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPersistentManager.swift; sourceTree = "<group>"; };
 		54CE9FB41CFAEC6D004B3D70 /* APIVideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIVideoManager.swift; sourceTree = "<group>"; };
 		54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 				54C3F8121CEED8D5000F58C6 /* VideoList */,
 				54F07FD61CE3039E006C63EB /* AuthorizationViewController.swift */,
 				54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */,
-				54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */,
 				54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */,
+				54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,10 +170,10 @@
 			isa = PBXGroup;
 			children = (
 				54F080021CE30650006C63EB /* Network */,
-				54EA14BF1CE4B2D5009B0A7F /* Video.swift */,
-				54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */,
 				54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */,
 				546E0B091CF8826A0076301C /* PersistentBroadcastModel.swift */,
+				54EA14BF1CE4B2D5009B0A7F /* Video.swift */,
+				54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,8 +185,7 @@
 				54F978861CEB05CB003BA14A /* VideoViewController.swift */,
 				54F978841CEB0320003BA14A /* VodeoCollectionViewCell.swift */,
 			);
-			name = VideoList;
-			path = ../VideoList;
+			path = VideoList;
 			sourceTree = "<group>";
 		};
 		54C3F8131CEED97C000F58C6 /* Bridging-header */ = {
@@ -201,9 +200,9 @@
 		54D9954B1CF2F19A00E9B7EE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */,
 				54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */,
 				546E0B0B1CF885A40076301C /* PersistentBroadcastViewModel.swift */,
+				54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -272,8 +271,7 @@
 				54CE9FB21CFAE12A004B3D70 /* APIPersistentManager.swift */,
 				54CE9FB41CFAEC6D004B3D70 /* APIVideoManager.swift */,
 			);
-			name = Network;
-			path = ../Classes;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D4E185DB0B74C751BBCC69E8 /* Frameworks */ = {
@@ -372,7 +370,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 54F07FCC1CE3039D006C63EB /* Build configuration list for PBXProject "WezomProject" */;
+			buildConfigurationList = 54F07FCC1CE3039D006C63EB /* Build configuration list for PBXProject "wezomproject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -895,7 +893,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		54F07FCC1CE3039D006C63EB /* Build configuration list for PBXProject "WezomProject" */ = {
+		54F07FCC1CE3039D006C63EB /* Build configuration list for PBXProject "wezomproject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54F07FF71CE3039F006C63EB /* Debug */,
