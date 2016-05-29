@@ -21,7 +21,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
 
         GIDSignIn.sharedInstance().uiDelegate = self
         
-       // GIDSignIn.sharedInstance().signOut()
+      
     }
 
     // Present a view that prompts the user to sign in with Google
