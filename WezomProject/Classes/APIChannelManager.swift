@@ -8,15 +8,16 @@
 
 import Alamofire
 
-protocol ChannelDataDelegate {
+protocol APIChannelDataDelegate {
     func channelDataReady(jsonArray: NSArray)
 }
 
-class Network: NSObject {
+class APIChannelManager: NSObject {
     
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
     let CHANNEL_URL = "https://www.googleapis.com/youtube/v3/channels"
-    var channelDataDelegate:ChannelDataDelegate?
+
+    var channelDataDelegate:APIChannelDataDelegate?
     
     
     func getInformationAboutChannel(){
@@ -40,4 +41,6 @@ class Network: NSObject {
         }
         
     }
+    
+    
 }

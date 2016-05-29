@@ -21,12 +21,6 @@ class VideoModel: NSObject {
     
     var delegate:VideoModelDelegate?
     
-    var persistentBroadcastID = ""
-    var persistentBroadcastTitle = ""
-    var persistentBroadcastBoundStreamId = ""
-    var boundStreamLastUpdateTimeMs = ""
-    var persistentBroadcastDescription = ""
-    
     func getBroadcustVideoList(){
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
 

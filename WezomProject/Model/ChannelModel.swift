@@ -12,10 +12,10 @@ protocol ChannelModelDelegate {
     func channelDataReady()
 }
 
-class ChannelModel: NSObject, ChannelDataDelegate {
+class ChannelModel: NSObject, APIChannelDataDelegate {
     
     var channelDelegate:ChannelModelDelegate?
-    var network = Network()
+    var network = APIChannelManager()
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
     internal let kChannelId: String = "id"

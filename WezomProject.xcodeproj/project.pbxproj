@@ -22,6 +22,7 @@
 		54C3F8151CEF03CA000F58C6 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */; };
 		54C3F8171CEF05DA000F58C6 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */; };
 		54C9FFCD1CF41848000790BC /* LiveStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */; };
+		54CE9FB31CFAE12A004B3D70 /* APIVideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE9FB21CFAE12A004B3D70 /* APIVideoManager.swift */; };
 		54D9954D1CF3331600E9B7EE /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */; };
 		54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */; };
 		54EA14C01CE4B2D5009B0A7F /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA14BF1CE4B2D5009B0A7F /* Video.swift */; };
@@ -32,7 +33,7 @@
 		54F07FDF1CE3039E006C63EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F07FDD1CE3039E006C63EB /* LaunchScreen.storyboard */; };
 		54F07FEA1CE3039F006C63EB /* WezomProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FE91CE3039F006C63EB /* WezomProjectTests.swift */; };
 		54F07FF51CE3039F006C63EB /* WezomProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F07FF41CE3039F006C63EB /* WezomProjectUITests.swift */; };
-		54F080041CE30667006C63EB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F080031CE30667006C63EB /* Network.swift */; };
+		54F080041CE30667006C63EB /* APIChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F080031CE30667006C63EB /* APIChannelManager.swift */; };
 		54F080061CE30694006C63EB /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54F080051CE30694006C63EB /* View.xib */; };
 		54F978851CEB0320003BA14A /* VodeoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F978841CEB0320003BA14A /* VodeoCollectionViewCell.swift */; };
 		54F978871CEB05CB003BA14A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F978861CEB05CB003BA14A /* VideoViewController.swift */; };
@@ -86,6 +87,7 @@
 		54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		54C3F8161CEF05DA000F58C6 /* ChannelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
 		54C9FFCC1CF41848000790BC /* LiveStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveStreamViewController.swift; sourceTree = "<group>"; };
+		54CE9FB21CFAE12A004B3D70 /* APIVideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIVideoManager.swift; sourceTree = "<group>"; };
 		54D9954C1CF3331600E9B7EE /* VideoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		54EA14BF1CE4B2D5009B0A7F /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 		54F07FF01CE3039F006C63EB /* WezomProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WezomProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F07FF41CE3039F006C63EB /* WezomProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WezomProjectUITests.swift; sourceTree = "<group>"; };
 		54F07FF61CE3039F006C63EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54F080031CE30667006C63EB /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		54F080031CE30667006C63EB /* APIChannelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIChannelManager.swift; sourceTree = "<group>"; };
 		54F080051CE30694006C63EB /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		54F978841CEB0320003BA14A /* VodeoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VodeoCollectionViewCell.swift; sourceTree = "<group>"; };
 		54F978861CEB05CB003BA14A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -263,7 +265,8 @@
 		54F080021CE30650006C63EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				54F080031CE30667006C63EB /* Network.swift */,
+				54F080031CE30667006C63EB /* APIChannelManager.swift */,
+				54CE9FB21CFAE12A004B3D70 /* APIVideoManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -476,9 +479,10 @@
 				54C396721CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift in Sources */,
 				54F07FD51CE3039E006C63EB /* AppDelegate.swift in Sources */,
 				54D9954D1CF3331600E9B7EE /* VideoViewModel.swift in Sources */,
-				54F080041CE30667006C63EB /* Network.swift in Sources */,
+				54F080041CE30667006C63EB /* APIChannelManager.swift in Sources */,
 				54EA14BE1CE4A20E009B0A7F /* VideoModel.swift in Sources */,
 				54C9FFCD1CF41848000790BC /* LiveStreamViewController.swift in Sources */,
+				54CE9FB31CFAE12A004B3D70 /* APIVideoManager.swift in Sources */,
 				54AFFC4B1CE47CC900E12152 /* UserDataViewController.swift in Sources */,
 				54F978851CEB0320003BA14A /* VodeoCollectionViewCell.swift in Sources */,
 				54B5B3611CE5BD95009F540A /* StreamViewController.swift in Sources */,

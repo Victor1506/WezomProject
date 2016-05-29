@@ -34,8 +34,6 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
         super.init()
         
         self.persBroadModel.persBroadModelDelegate = self
-        //get defoult stream information
-        self.persBroadModel.getPersistentBroadcast()
         
         //session setting
         session.delegate = self

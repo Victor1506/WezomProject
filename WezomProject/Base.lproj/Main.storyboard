@@ -302,16 +302,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fsb-xA-BUc">
-                                <rect key="frame" x="20" y="213" width="560" height="43"/>
+                                <rect key="frame" x="20" y="205" width="560" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="Ttg-BU-WcE"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ttg-BU-WcE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yej-Pt-AyF">
-                                <rect key="frame" x="20" y="269" width="560" height="83"/>
+                                <rect key="frame" x="20" y="298" width="560" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -333,7 +333,7 @@
                             <constraint firstAttribute="trailing" secondItem="yej-Pt-AyF" secondAttribute="trailing" constant="20" id="LIT-Y4-D2a"/>
                             <constraint firstItem="Fsb-xA-BUc" firstAttribute="leading" secondItem="kub-Ii-xNa" secondAttribute="leading" constant="20" id="Q6Z-2E-IlG"/>
                             <constraint firstItem="PJg-89-qGD" firstAttribute="top" secondItem="F9K-8S-NbV" secondAttribute="bottom" id="SRk-dv-Ip3"/>
-                            <constraint firstItem="Fsb-xA-BUc" firstAttribute="top" secondItem="PJg-89-qGD" secondAttribute="bottom" constant="13" id="c7Q-rP-yxk"/>
+                            <constraint firstItem="Fsb-xA-BUc" firstAttribute="top" secondItem="PJg-89-qGD" secondAttribute="bottom" constant="5" id="c7Q-rP-yxk"/>
                             <constraint firstItem="yej-Pt-AyF" firstAttribute="top" secondItem="Fsb-xA-BUc" secondAttribute="bottom" constant="13" id="kGW-qa-4h2"/>
                             <constraint firstAttribute="trailing" secondItem="Fsb-xA-BUc" secondAttribute="trailing" constant="20" id="vaL-u7-DUp"/>
                         </constraints>
