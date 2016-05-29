@@ -16,11 +16,11 @@ class APIVideoManager: NSObject {
 
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
     let BROADCAST_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
+    let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
     
     var videoDataDelegate:APIVideoDataDelegate?
     
     func getBroadcustVideoList(){
-        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
         Alamofire.request(.GET, BROADCAST_VIDEO_URL, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
@@ -36,8 +36,6 @@ class APIVideoManager: NSObject {
     }
     
     func deleteBroadcastById(id: String){
-        
-        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
         Alamofire.request(.DELETE, BROADCAST_VIDEO_URL, parameters: ["id" : id, "key":API_KEY], encoding: ParameterEncoding.URL, headers: headers)
     }

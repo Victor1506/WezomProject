@@ -14,7 +14,7 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
 
     let persBroadModel = PersistentBroadcastModel()
     var pBroadViewModelDelegate: PBViewModelDelegate?
-    var session = VCSimpleSession(videoSize: CGSize(width:  426, height: 240), frameRate: 30, bitrate: 500000, useInterfaceOrientation: false)
+    var session = VCSimpleSession(videoSize: CGSize(width: 426, height: 240), frameRate: 30, bitrate: 500000, useInterfaceOrientation: false)
     
     var persistentBroadcastID = ""
     var persistentBroadcastTitle = ""
@@ -130,17 +130,11 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
     }
     
     func connectionStatusChanged(sessionState: VCSessionState) {
-//        switch session.rtmpSessionState {
-//        case .Starting:
-//            let image = UIImage(named: "Start.png")! as UIImage
-//            connectButton.setImage(image, forState: .Normal)
-//        case .Started:
-//            let image = UIImage(named: "Stop.png")! as UIImage
-//            connectButton.setImage(image, forState: .Normal)
-//            
-//        default:
-//            let image = UIImage(named: "Start.png")! as UIImage
-//            connectButton.setImage(image, forState: .Normal)
-//        }
+
     }
 }
+
+
+
+
+

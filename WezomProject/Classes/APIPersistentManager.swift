@@ -18,12 +18,12 @@ class APIPersistentManager: NSObject {
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
     let BROADCAST_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
     let STREAM_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveStreams"
+    let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
     
     var videoDataDelegat: APIPersistentDataDelegate?
 
     func getPersistentBroadcast(){
-        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
-        
+    
         Alamofire.request(.GET, BROADCAST_VIDEO_URL, parameters: ["part" : "snippet, contentDetails", "key":API_KEY,"broadcastType":"persistent","mine":"true"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
@@ -40,7 +40,6 @@ class APIPersistentManager: NSObject {
     }
     
     func getPersistentStream(persistentBroadcastBoundStreamId: String) {
-        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
         Alamofire.request(.GET, STREAM_VIDEO_URL, parameters: ["part" : "snippet, cdn", "key":API_KEY,"id":persistentBroadcastBoundStreamId], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
