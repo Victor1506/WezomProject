@@ -157,6 +157,7 @@
 		54B5B3621CE5BE27009F540A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				54C3F8121CEED8D5000F58C6 /* VideoList */,
 				54F07FD61CE3039E006C63EB /* AuthorizationViewController.swift */,
 				54C396711CEDAF3600AE2ED7 /* InsertBroadcastsViewController.swift */,
 				54AFFC4A1CE47CC900E12152 /* UserDataViewController.swift */,
@@ -168,6 +169,7 @@
 		54B5B3631CE5BE51009F540A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54F080021CE30650006C63EB /* Network */,
 				54EA14BF1CE4B2D5009B0A7F /* Video.swift */,
 				54EA14BD1CE4A20E009B0A7F /* VideoModel.swift */,
 				54C3F8141CEF03CA000F58C6 /* ChannelModel.swift */,
@@ -183,7 +185,8 @@
 				54F978861CEB05CB003BA14A /* VideoViewController.swift */,
 				54F978841CEB0320003BA14A /* VodeoCollectionViewCell.swift */,
 			);
-			path = VideoList;
+			name = VideoList;
+			path = ../VideoList;
 			sourceTree = "<group>";
 		};
 		54C3F8131CEED97C000F58C6 /* Bridging-header */ = {
@@ -231,10 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				54C3F8131CEED97C000F58C6 /* Bridging-header */,
-				54F080021CE30650006C63EB /* Classes */,
 				54B5B3621CE5BE27009F540A /* Controller */,
 				54B5B3631CE5BE51009F540A /* Model */,
-				54C3F8121CEED8D5000F58C6 /* VideoList */,
 				54D9954B1CF2F19A00E9B7EE /* ViewModel */,
 				54F07FD41CE3039E006C63EB /* AppDelegate.swift */,
 				54F07FDB1CE3039E006C63EB /* Assets.xcassets */,
@@ -264,14 +265,15 @@
 			path = WezomProjectUITests;
 			sourceTree = "<group>";
 		};
-		54F080021CE30650006C63EB /* Classes */ = {
+		54F080021CE30650006C63EB /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				54F080031CE30667006C63EB /* APIChannelManager.swift */,
 				54CE9FB21CFAE12A004B3D70 /* APIPersistentManager.swift */,
 				54CE9FB41CFAEC6D004B3D70 /* APIVideoManager.swift */,
 			);
-			path = Classes;
+			name = Network;
+			path = ../Classes;
 			sourceTree = "<group>";
 		};
 		D4E185DB0B74C751BBCC69E8 /* Frameworks */ = {
