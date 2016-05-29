@@ -12,9 +12,6 @@ import Alamofire
 class ViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var SignInButton: GIDSignInButton!
-    var videos = [Video]()
-    var model = VideoModel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,10 +12,10 @@ protocol PBModelDelegate {
     func persBroadDataReady()
 }
 
-class PersistentBroadcastModel: NSObject, APIVideoDataDelegate {
+class PersistentBroadcastModel: NSObject, APIPersistentDataDelegate {
     
     var persBroadModelDelegate:PBModelDelegate?
-    var apiVideoManager = APIVideoManager()
+    var apiVideoManager = APIPersistentManager()
     
     // MARK: Declaration for string constants to be used to decode and also serialize.
     internal let kPersistentBroadcastID: String = "id"

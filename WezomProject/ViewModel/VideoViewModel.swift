@@ -16,6 +16,7 @@ class VideoViewModel: NSObject, VideoModelDelegate {
     
     var videoArray = [Video]()
     let videoModel = VideoModel()
+    let apiVideoManager = APIVideoManager()
     var videoViewModelDelegate: VideoViewModelDelegate?
     
     // constant for caching video
@@ -28,9 +29,7 @@ class VideoViewModel: NSObject, VideoModelDelegate {
         super.init()
 
         //set delegate
-        self.videoModel.delegate = self
-        //get information about broadcasts
-        self.videoModel.getBroadcustVideoList()
+        self.videoModel.videoModelDelegate = self
     }
     
     func videoDataReady() {
@@ -42,11 +41,11 @@ class VideoViewModel: NSObject, VideoModelDelegate {
     }
     
     func refresh(){
-        videoModel.getBroadcustVideoList()
+        videoModel.apiVideoManager.getBroadcustVideoList()
     }
     
     func deleteBroadcastByID(id:String){
-        videoModel.deleteBroadcastById(id)
+        apiVideoManager.deleteBroadcastById(id)
     }
     
     func cacheImage(image: Image, urlString: String) {
@@ -75,7 +74,7 @@ class VideoViewModel: NSObject, VideoModelDelegate {
     }
     
     func setBroadcastInformation(title:String, startTime: String, endTime: String, description: String, status: String){
-      videoModel.sendBroadcastInformation(title, startTime: startTime, endTime: endTime, description: description, status: status)
+      apiVideoManager.sendBroadcastInformation(title, startTime: startTime, endTime: endTime, description: description, status: status)
     }
     
 }

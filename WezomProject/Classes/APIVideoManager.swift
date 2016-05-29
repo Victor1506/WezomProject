@@ -9,51 +9,69 @@
 import Alamofire
 
 protocol APIVideoDataDelegate {
-    func persistentBroadcastReady(jsonArray: NSArray)
-    func persistentStreamReady(jsonArray: NSArray)
+    func videoDataReady(jsonArray: AnyObject)
 }
 
 class APIVideoManager: NSObject {
-    
+
     let API_KEY = "AIzaSyDrQbrbBvukMlZVVnL_nFIBYM7h9_dy3Ig"
     let BROADCAST_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts"
-    let STREAM_VIDEO_URL = "https://www.googleapis.com/youtube/v3/liveStreams"
     
-    var videoDataDelegat: APIVideoDataDelegate?
-
-    func getPersistentBroadcast(){
+    var videoDataDelegate:APIVideoDataDelegate?
+    
+    func getBroadcustVideoList(){
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
-        Alamofire.request(.GET, BROADCAST_VIDEO_URL, parameters: ["part" : "snippet, contentDetails", "key":API_KEY,"broadcastType":"persistent","mine":"true"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
+        Alamofire.request(.GET, BROADCAST_VIDEO_URL, parameters: ["part" : "snippet", "key":API_KEY,"mine":"true","maxResults":"50"], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
             
             if let JSON = response.result.value {
                 
-                let persBroabcast = JSON["items"] as! NSArray
-                
                 //Notify the delegate that the data is ready
-                if self.videoDataDelegat != nil {
-                    self.videoDataDelegat!.persistentBroadcastReady(persBroabcast)
+                if self.videoDataDelegate != nil {
+                    self.videoDataDelegate!.videoDataReady(JSON)
                 }
-
+                
             }
         }
     }
     
-    func getPersistentStream(persistentBroadcastBoundStreamId: String) {
+    func deleteBroadcastById(id: String){
+        
         let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
         
-        Alamofire.request(.GET, STREAM_VIDEO_URL, parameters: ["part" : "snippet, cdn", "key":API_KEY,"id":persistentBroadcastBoundStreamId], encoding: ParameterEncoding.URL, headers: headers).responseJSON{ (response) -> Void in
-            
-            if let JSON = response.result.value {
-                print(JSON)
+        Alamofire.request(.DELETE, BROADCAST_VIDEO_URL, parameters: ["id" : id, "key":API_KEY], encoding: ParameterEncoding.URL, headers: headers)
+    }
+    
+    func sendBroadcastInformation(title: String, startTime: String, endTime: String, description: String, status: String){
+        let URL = "https://www.googleapis.com/youtube/v3/liveBroadcasts?part=status%2C+snippet&key=\(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"
+        let headers = ["Authorization": "Bearer \(GIDSignIn.sharedInstance().currentUser.authentication.accessToken)"]
+        
+        let dictionarySnippet :Dictionary<String, AnyObject>  = [
+            "title": title,
+            "scheduledEndTime": endTime,
+            "scheduledStartTime": startTime,
+            "description" : description
+        ]
+        
+        let dictionaryStatus :Dictionary<String,AnyObject> = [
+            "privacyStatus": status
+        ]
+        
+        let dictionaryParameters :Dictionary<String, AnyObject> = [
+            "snippet" : dictionarySnippet,
+            "status" : dictionaryStatus,
+            // "contentDetails" : dictionaryContentDetails
+        ]
+        
+        Alamofire.request(.POST, URL, parameters: dictionaryParameters, encoding: .JSON, headers: headers
+            ).responseJSON{ (response) -> Void in
                 
-                let persStream = JSON["items"] as! NSArray
-                
-                //Notify the delegate that the data is ready
-                if self.videoDataDelegat != nil {
-                    self.videoDataDelegat!.persistentStreamReady(persStream)
+                if let JSON = response.result.value {
+                    
+                    print(JSON)
+                    
                 }
-            }
         }
+        
     }
 }
