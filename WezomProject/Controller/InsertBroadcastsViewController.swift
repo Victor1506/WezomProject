@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InsertBroadcastsViewController: UIViewController {
+class InsertBroadcastsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var videoStatusTextField: UITextField!
     @IBOutlet weak var videoTitleTextField: UITextField!
@@ -17,8 +17,12 @@ class InsertBroadcastsViewController: UIViewController {
     @IBOutlet weak var videoDescriptionTextView: UITextView!
     
     var videoViewModel = VideoViewModel()
-    let datePickerView:UIDatePicker = UIDatePicker()
+    let datePickerView = UIDatePicker()
     
+    var statusPickerArr = ["public", "private", "unlisted"]
+    let statusPickerView = UIPickerView()
+    
+    //check press on text field
     var whotTextFieldSet = ""
     let startTimer = "startTimer"
     let endTimer = "endTimer"
@@ -29,6 +33,14 @@ class InsertBroadcastsViewController: UIViewController {
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        //add custom picker view 
+        self.view.addSubview(statusPickerView)
+        
+        //create custom Picker View
+        statusPickerView.hidden = true
+        statusPickerView.delegate = self
+        statusPickerView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +58,10 @@ class InsertBroadcastsViewController: UIViewController {
         whotTextFieldSet = endTimer
     }
     
+    @IBAction func statusTextEdit(sender: AnyObject) {
+        statusPickerView.hidden = false
+    }
+
     @IBAction func okButton(sender: UIButton) {
         
         if videoStatusTextField.text == "" || videoTitleTextField.text == "" || startTimeTextField.text == "" || endTimeTextField.text == "" {
@@ -100,6 +116,25 @@ class InsertBroadcastsViewController: UIViewController {
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+        statusPickerView.hidden = true
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return statusPickerArr.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        videoStatusTextField.text = statusPickerArr[row]
+        statusPickerView.hidden = true
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: statusPickerArr[row], attributes: [NSForegroundColorAttributeName : UIColor.redColor()])
+        return attributedString
     }
 
 

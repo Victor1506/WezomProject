@@ -21,7 +21,7 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
     var persBroadViewModel = PersistentBroadcastViewModel()
     
     var bitratePickerArr = ["240p", "360p", "480p", "720p", "1080p"]
-    var bitratePickerView: UIPickerView = UIPickerView()
+    var bitratePickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -242,6 +242,9 @@
                                 <rect key="frame" x="160" y="220" width="420" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="statusTextEdit:" destination="Ra0-ZB-X5m" eventType="editingDidBegin" id="RYo-Tk-ak9"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN5-mk-8aA">
                                 <rect key="frame" x="33" y="220" width="48" height="21"/>
