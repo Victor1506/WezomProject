@@ -62,6 +62,7 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
     
     func startVideoSession(){
         session.startRtmpSessionWithURL(self.persistentStreamIngestionAddress, andStreamKey: self.persistentStreamKEY)
+        
     }
     
     func stopVideoSession(){
