@@ -80,7 +80,7 @@ class InsertBroadcastsViewController: UIViewController, UIPickerViewDelegate, UI
         
         //set format for datePicker
         let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "el_GR")
+        dateFormatter.locale = NSLocale(localeIdentifier: "uk_UA")
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
         
