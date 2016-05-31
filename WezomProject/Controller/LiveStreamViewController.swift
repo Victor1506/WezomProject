@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import RxCocoa
+import RxSwift
 
 
 class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
@@ -19,6 +21,7 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
     @IBOutlet weak var audioButton: UIButton!
     
     var persBroadViewModel = PersistentBroadcastViewModel()
+    let disposeBag = DisposeBag()
     
     var bitratePickerArr = ["240p", "360p", "480p", "720p", "1080p"]
     var bitratePickerView = UIPickerView()
@@ -38,11 +41,18 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         bitratePickerView.hidden = true
         bitratePickerView.delegate = self
         bitratePickerView.dataSource = self
+        
+//        persBroadViewModel.sessionState.bindTo(connectButton.rx_text)
+//            .addDisposableTo(disposeBag)
+        persBroadViewModel.curentSessionStateIcon.subscribeNext { image in
+            self.connectButton.setImage(image, forState: .Normal)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(false)
+        persBroadViewModel.stopVideoSession()
+        persBroadViewModel.deinitSession()
     }
     
     deinit {
@@ -56,23 +66,15 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
             bitrateButton.hidden = true
             
             //set image on button
-            let image = UIImage(named: "Stop.png")! as UIImage
-            connectButton.setImage(image, forState: .Normal)
+//            let image = UIImage(named: "Stop.png")! as UIImage
+//            connectButton.setImage(image, forState: .Normal)
         case .Started, .Starting:
             persBroadViewModel.stopVideoSession()
             persBroadViewModel.deinitSession()
             
             //set image on button
-            let image = UIImage(named: "Start.png")! as UIImage
-            connectButton.setImage(image, forState: .Normal)
-        default:
-            persBroadViewModel.stopVideoSession()
-            persBroadViewModel.deinitSession()
-            
-            //set image on button
-            let image = UIImage(named: "Start.png")! as UIImage
-            connectButton.setImage(image, forState: .Normal)
-            break
+//            let image = UIImage(named: "Start.png")! as UIImage
+//            connectButton.setImage(image, forState: .Normal)
         }
         
     }
@@ -84,8 +86,6 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
             break
         case VCCameraState.Back:
             persBroadViewModel.sessionCameraFront()
-            break
-        default:
             break
         }
     }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "67D7C2F2F105136E8F97915E"
+               BlueprintIdentifier = "FAD4AA78B77D9A71D54B0FD5"
                BuildableName = "Pods_WezomProject.framework"
                BlueprintName = "Pods-WezomProject"
                ReferencedContainer = "container:Pods.xcodeproj">

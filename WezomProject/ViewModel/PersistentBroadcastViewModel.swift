@@ -6,12 +6,16 @@
 //  Copyright © 2016 Vitya. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
+
 protocol PBViewModelDelegate {
     func broadcastViewModelDataReady()
 }
 
 class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate {
 
+    let disposeBag = DisposeBag()
     let persBroadModel = PersistentBroadcastModel()
     var pBroadViewModelDelegate: PBViewModelDelegate?
     var session = VCSimpleSession(videoSize: CGSize(width: 426, height: 240), frameRate: 30, bitrate: 500000, useInterfaceOrientation: false)
@@ -29,6 +33,7 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
     var persistentStreamBackupIngestionAddress = ""
     var persistentStreamResolution = ""
     var persistentStreamFrameRate = ""
+    var curentSessionStateIcon = PublishSubject<UIImage>()
     
     override init() {
         super.init()
@@ -129,9 +134,17 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
             print("incorrect resosution")
         }
     }
+
     
     func connectionStatusChanged(sessionState: VCSessionState) {
-
+        switch sessionState {
+        case .Starting, .Started:
+            self.curentSessionStateIcon.onNext(UIImage(named: "Stop.png")! as UIImage)
+        case .Ended:
+            self.curentSessionStateIcon.onNext(UIImage(named: "Start.png")! as UIImage)
+        default:
+            print("session error")
+        }
     }
 }
 

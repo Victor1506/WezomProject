@@ -8,6 +8,8 @@ target 'WezomProject' do
 	pod 'Alamofire', '~> 3.4'
     pod 'AlamofireImage', '~> 2.0'
     pod 'VideoCore', '~>0.3'
+    pod 'RxSwift',    '~> 2.0'
+    pod 'RxCocoa',    '~> 2.0'
 end
 
 target 'WezomProjectTests' do

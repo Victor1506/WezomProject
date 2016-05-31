@@ -19,6 +19,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UriParser-cpp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1477A12B3C68B7B55C0409535ED87D8A</key>
+		<key>174524A52CBF2598A79A45DC5F74CF2A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2777AFDFECE6502A6922324DFEC9F724</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63784DCC81CFBCE19749903CC14770E3</key>
+		<key>511FA396D00D35180AE0DD00B3D6F4F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB531BA7EEBB204E57BAB818E31BD079</key>
+		<key>72081144F81CC145C000B7542431FA3C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC207C89CD15DA0B90525FE6318509F4</key>
+		<key>B0506193DFC72BB066295E2014D3C893</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D40515521E79700BBCB1090E1CC3A3AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

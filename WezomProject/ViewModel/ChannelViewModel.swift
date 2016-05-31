@@ -27,7 +27,6 @@ class ChannelViewModel: NSObject, ChannelModelDelegate {
         super.init()
         
         self.channelModel.channelDelegate = self
-        
     }
     
     func channelDataReady() {
