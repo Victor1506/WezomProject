@@ -19,12 +19,15 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var bitrateButton: UIButton!
     @IBOutlet weak var audioButton: UIButton!
+    let startImage = UIImage(named: "Start.png")! as UIImage
+    let stopImage = UIImage(named: "Stop.png")! as UIImage
     
     var persBroadViewModel = PersistentBroadcastViewModel()
     let disposeBag = DisposeBag()
     
     var bitratePickerArr = ["240p", "360p", "480p", "720p", "1080p"]
     var bitratePickerView = UIPickerView()
+    var connectingIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +44,23 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         bitratePickerView.hidden = true
         bitratePickerView.delegate = self
         bitratePickerView.dataSource = self
-        
-//        persBroadViewModel.sessionState.bindTo(connectButton.rx_text)
-//            .addDisposableTo(disposeBag)
-        persBroadViewModel.curentSessionStateIcon.subscribeNext { image in
-            self.connectButton.setImage(image, forState: .Normal)
+
+        //check session state
+        persBroadViewModel.curentSessionState.subscribeNext { sessionStatus in
+            switch sessionStatus {
+            case VCSessionState.Starting:
+                self.connectButton.setImage(self.stopImage, forState: .Normal)
+                self.connectingIndicatorView.startAnimating()
+            case VCSessionState.Started:
+                self.connectButton.setImage(self.stopImage, forState: .Normal)
+                self.connectingIndicatorView.stopAnimating()
+            case VCSessionState.Ended:
+                self.connectButton.setImage(self.startImage, forState: .Normal)
+            case VCSessionState.Error:
+                self.connectingIndicatorView.stopAnimating()
+            default:
+                print("satus error")
+            }
         }
     }
 
@@ -55,7 +70,7 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         persBroadViewModel.deinitSession()
     }
     
-    deinit {
+     deinit {
         persBroadViewModel.deinitSession()
     }
     
@@ -64,19 +79,10 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         case .None, .PreviewStarted, .Ended, .Error:
             persBroadViewModel.startVideoSession()
             bitrateButton.hidden = true
-            
-            //set image on button
-//            let image = UIImage(named: "Stop.png")! as UIImage
-//            connectButton.setImage(image, forState: .Normal)
         case .Started, .Starting:
             persBroadViewModel.stopVideoSession()
             persBroadViewModel.deinitSession()
-            
-            //set image on button
-//            let image = UIImage(named: "Start.png")! as UIImage
-//            connectButton.setImage(image, forState: .Normal)
         }
-        
     }
     
     @IBAction func cameraChangeButton(sender: AnyObject) {
@@ -114,6 +120,7 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         preview.addSubview(connectButton)
         preview.addSubview(bitrateButton)
         preview.addSubview(audioButton)
+        preview.addSubview(connectingIndicatorView)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -136,7 +143,6 @@ class LiveStreamViewController: UIViewController, PBViewModelDelegate, UIPickerV
         let attributedString = NSAttributedString(string: bitratePickerArr[row], attributes: [NSForegroundColorAttributeName : UIColor.redColor()])
         return attributedString
     }
-    
     
     func broadcastViewModelDataReady(){
         

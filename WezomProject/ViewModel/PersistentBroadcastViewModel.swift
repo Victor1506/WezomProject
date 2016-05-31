@@ -33,7 +33,7 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
     var persistentStreamBackupIngestionAddress = ""
     var persistentStreamResolution = ""
     var persistentStreamFrameRate = ""
-    var curentSessionStateIcon = PublishSubject<UIImage>()
+    var curentSessionState = PublishSubject<VCSessionState>()
     
     override init() {
         super.init()
@@ -134,17 +134,9 @@ class PersistentBroadcastViewModel: NSObject, PBModelDelegate, VCSessionDelegate
             print("incorrect resosution")
         }
     }
-
     
     func connectionStatusChanged(sessionState: VCSessionState) {
-        switch sessionState {
-        case .Starting, .Started:
-            self.curentSessionStateIcon.onNext(UIImage(named: "Stop.png")! as UIImage)
-        case .Ended:
-            self.curentSessionStateIcon.onNext(UIImage(named: "Start.png")! as UIImage)
-        default:
-            print("session error")
-        }
+        self.curentSessionState.onNext(sessionState)
     }
 }
 
